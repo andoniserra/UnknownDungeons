@@ -1,0 +1,480 @@
+fileFormatVersion: 2
+guid: 78291dee29a278a4686af04e92d85721
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: p.p.term
+    21300002: p.p.term_0
+    21300004: p.p.term_1
+    21300006: p.p.term_2
+    21300008: p.p.term_3
+    21300010: p.p.term_4
+    21300012: p.p.term_5
+    21300014: p.p.term_6
+    21300016: p.p.term_7
+    21300018: p.p.term_8
+    21300020: p.p.term_9
+    21300022: p.p.term_10
+    21300024: p.p.term_11
+    21300026: p.p.term_12
+    21300028: p.p.term_13
+    21300030: p.p.term_14
+    21300032: p.p.term_15
+    21300034: p.p.term_16
+    21300036: p.p.term_17
+    21300038: p.p.term_18
+    21300040: p.p.term_19
+    21300042: p.p.term_20
+    21300044: p.p.term_21
+    21300046: p.p.term_22
+    21300048: p.p.term_23
+    21300050: p.p.term_24
+    21300052: p.p.term_25
+    21300054: p.p.term_26
+    21300056: p.p.term_27
+    21300058: p.p.term_28
+    21300060: p.p.term_29
+    21300062: p.p.term_30
+    21300064: p.p.term_31
+    21300066: p.p.term_32
+    21300068: p.p.term_33
+    21300070: p.p.term_34
+    21300072: p.p.term_35
+    21300074: Filip_0
+    21300076: Filip_1
+    21300078: Filip_2
+    21300080: Filip_3
+    21300082: Filip_4
+    21300084: Filip_5
+    21300086: Filip_6
+    21300088: Filip_7
+    21300090: Filip_8
+    21300092: Filip_9
+    21300094: Filip_10
+    21300096: Filip_11
+    21300098: Filip_12
+    21300100: Filip_13
+    21300102: Filip_14
+    21300104: Filip_15
+    21300106: Filip_16
+    21300108: Filip_17
+    21300110: Filip_18
+    21300112: Filip_19
+    21300114: Filip_20
+    21300116: Filip_21
+    21300118: Filip_22
+    21300120: Filip_23
+    21300122: Filip_24
+    21300124: Filip_25
+    21300126: Filip_26
+    21300128: Filip_27
+    21300130: Filip_28
+    21300132: Filip_29
+    21300134: Filip_30
+    21300136: Filip_31
+    21300138: Filip_32
+    21300140: Filip_33
+    21300142: Filip_34
+    21300144: Filip_35
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 8
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Filip_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 111
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 110
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 110
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 112
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 111
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_5
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 111
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_6
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 112
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_7
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 112
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_8
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 112
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 79
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 79
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_11
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 78
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_12
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 72
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_13
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 78
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_14
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 78
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_15
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 78
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_16
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 78
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 78
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 49
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_19
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 47
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_20
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 47
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_21
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 42
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_22
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 42
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_23
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 34
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_24
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 42
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_25
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 42
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_26
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 43
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_28
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 15
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_29
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 16
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_30
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 6
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_31
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 6
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_32
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_33
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 6
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_34
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 6
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Filip_35
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 6
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
