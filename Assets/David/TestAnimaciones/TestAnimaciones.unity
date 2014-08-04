@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 172303559}
   - 61: {fileID: 172303558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pared
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 416867034}
   - 61: {fileID: 416867033}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pared
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 457374888}
   - 61: {fileID: 457374887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pared
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2041781367}
   - 61: {fileID: 2041781366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pared
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -52,6 +52,10 @@ public class TestAnimacion : MonoBehaviour
 		{
 			m_animator.SetTrigger("ataque");
 		}
+		if (Input.GetButtonDown("Fire2"))
+		{
+			m_animator.SetTrigger("herido");
+		}
 
 		if (m_move)
 		{

@@ -50,6 +50,17 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+  - serializedVersion: 3
+    m_Name: Herido
+    m_StateMachine: {fileID: 110791659}
+    m_Mask: {fileID: 0}
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_StateMachineMotionSetIndex: 0
+    m_DefaultWeight: 1
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
 --- !u!1101 &110100000
 Transition:
   serializedVersion: 2
@@ -352,6 +363,26 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: ataque
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110121177
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110295254}
+  m_DstState: {fileID: 110264098}
+  m_TransitionDuration: .214285716
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
     m_EventTreshold: 0
     m_ExitTime: 1
   m_Atomic: 1
@@ -774,6 +805,26 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
+--- !u!1101 &110181445
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 0}
+  m_DstState: {fileID: 110295254}
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: herido
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110183812
 Transition:
   serializedVersion: 2
@@ -1078,6 +1129,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110264098
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Filip_NoHerido
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 82340728e2c89d24c99087f73f218b32, type: 2}
+  m_ParentStateMachine: {fileID: 110791659}
+  m_Position: {x: 336, y: -120, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110265869
 State:
   m_ObjectHideFlags: 3
@@ -1142,6 +1208,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110295254
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Filip_Herido
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: f1a9dd4d3a9f42c40b2d7dd601316608, type: 2}
+  m_ParentStateMachine: {fileID: 110791659}
+  m_Position: {x: 336, y: 12, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1107 &110700000
 StateMachine:
   serializedVersion: 2
@@ -1155,12 +1236,10 @@ StateMachine:
   - {fileID: 110765143}
   - {fileID: 110771612}
   - {fileID: 110785808}
-  - {fileID: 110764380}
   m_ChildStateMachinePosition:
-  - {x: 384, y: -168, z: 0}
-  - {x: 36, y: -168, z: 0}
-  - {x: 204, y: -36, z: 0}
-  - {x: 180, y: -252, z: 0}
+  - {x: 372, y: -168, z: 0}
+  - {x: 24, y: -168, z: 0}
+  - {x: 192, y: -36, z: 0}
   m_OrderedTransitions:
     data:
       first: {fileID: 0}
@@ -1250,22 +1329,7 @@ StateMachine:
       - {fileID: 110115339}
       - {fileID: 110136887}
   m_MotionSetCount: 1
-  m_AnyStatePosition: {x: -72, y: -240, z: 0}
-  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
---- !u!1107 &110764380
-StateMachine:
-  serializedVersion: 2
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Herido
-  m_DefaultState: {fileID: 0}
-  m_States: []
-  m_ChildStateMachine: []
-  m_ChildStateMachinePosition: []
-  m_OrderedTransitions: {}
-  m_MotionSetCount: 2
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_AnyStatePosition: {x: 216, y: -240, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
 --- !u!1107 &110765143
 StateMachine:
@@ -1327,3 +1391,28 @@ StateMachine:
   m_MotionSetCount: 2
   m_AnyStatePosition: {x: 756, y: 204, z: 0}
   m_ParentStateMachinePosition: {x: 732, y: -228, z: 0}
+--- !u!1107 &110791659
+StateMachine:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Herido
+  m_DefaultState: {fileID: 110264098}
+  m_States:
+  - {fileID: 110295254}
+  - {fileID: 110264098}
+  m_ChildStateMachine: []
+  m_ChildStateMachinePosition: []
+  m_OrderedTransitions:
+    data:
+      first: {fileID: 110295254}
+      second:
+      - {fileID: 110121177}
+    data:
+      first: {fileID: 0}
+      second:
+      - {fileID: 110181445}
+  m_MotionSetCount: 1
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
