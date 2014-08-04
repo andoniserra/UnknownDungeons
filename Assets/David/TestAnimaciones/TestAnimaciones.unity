@@ -236,6 +236,8 @@ GameObject:
   - 50: {fileID: 236522962}
   - 61: {fileID: 236522961}
   - 114: {fileID: 236522964}
+  - 114: {fileID: 236522965}
+  - 114: {fileID: 236522963}
   m_Layer: 0
   m_Name: Filip
   m_TagString: Untagged
@@ -282,6 +284,50 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!114 &236522963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 236522959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd8b7ba8411552418ab87e182cdc440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usePhysicsForMovement: 0
+  _skinWidth: .0199999996
+  platformMask:
+    serializedVersion: 2
+    m_Bits: 256
+  oneWayPlatformMask:
+    serializedVersion: 2
+    m_Bits: 0
+  slopeLimit: 30
+  slopeSpeedMultiplier:
+    serializedVersion: 2
+    m_Curve:
+    - time: -90
+      value: 1.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 90
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  totalHorizontalRays: 8
+  totalVerticalRays: 4
+  createTriggerHelperGameObject: 0
+  triggerHelperBoxColliderScale: .949999988
 --- !u!114 &236522964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +341,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_move: 1
   m_speed: {x: 6, y: 6, z: 0}
+  m_equippedWeapon: 0
+--- !u!114 &236522965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 236522959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c341e05a97ffe4dbcf936981b8f2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: {x: 32, y: 32}
 --- !u!1 &290112444
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +366,7 @@ GameObject:
   - 61: {fileID: 290112446}
   - 114: {fileID: 290112445}
   m_Layer: 0
-  m_Name: Filip
+  m_Name: FilipQuieto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_move: 0
   m_speed: {x: 8, y: 8, z: 0}
+  m_equippedWeapon: 0
 --- !u!61 &290112446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -652,7 +712,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 404811333
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300040, guid: a883108c167fced40b0b761275ae569a, type: 3}
+  m_Sprite: {fileID: 21300074, guid: a883108c167fced40b0b761275ae569a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1856439182
 GameObject:

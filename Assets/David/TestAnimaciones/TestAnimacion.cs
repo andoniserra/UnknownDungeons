@@ -6,7 +6,13 @@ public class TestAnimacion : MonoBehaviour
 	public bool m_move = false;
 	public Vector3 m_speed = new Vector3(4, 4, 0);
 
+	private const int m_numberOfWeapons = 4;
+
+	[Range(0, m_numberOfWeapons -1)]
+	public int m_equippedWeapon = 0;
+
 	Animator m_animator;
+	Movement m_movement;
 
 
 
@@ -14,6 +20,10 @@ public class TestAnimacion : MonoBehaviour
 	void Awake () 
 	{
 		m_animator = GetComponentInChildren<Animator>();
+		if (m_move)
+		{
+			m_movement = GetComponent<Movement>();
+		}
 
 	}
 	
@@ -57,14 +67,36 @@ public class TestAnimacion : MonoBehaviour
 			m_animator.SetTrigger("herido");
 		}
 
+		// Cambiar de arma
+		if (Input.GetButtonDown("Jump"))
+		{
+			CambiarArma();
+			m_animator.SetInteger("arma", m_equippedWeapon);
+		}
+
 		if (m_move)
 		{
-			Vector3 movement = new Vector3(
+			/*Vector3 movement = new Vector3(
 				input.x * m_speed.x * Time.deltaTime,
 				input.y * m_speed.y * Time.deltaTime,
 				0f);
-			transform.Translate(movement);
+				*/
+			//transform.Translate(movement);
+			Vector3 movement = new Vector3(
+				input.x,
+				input.y,
+				0f);
+			m_movement.Move(movement);
 		}
 
+	}
+
+	private void CambiarArma ()
+	{
+		m_equippedWeapon += 1;
+		if (m_equippedWeapon >= m_numberOfWeapons)
+		{
+			m_equippedWeapon = 0;
+		}
 	}
 }
