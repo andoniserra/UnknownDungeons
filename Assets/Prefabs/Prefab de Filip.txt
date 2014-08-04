@@ -1,0 +1,6 @@
+Prefab de Filip
+---------------
+
+Filip tiene que ser un prefab con el sprite como objeto hijo, ya que algunas animaciones requieren traslaciones del sprite de unos pocos píxeles. Si no se hace así, las traslaciones se hacen en coordenadas absolutas y el sprite se va siempre al centro. Al hacerlo dentro de un objeto contenedor, las traslaciones son relativas al contenedor y así no se rompe nada ;)
+
+Esto también implica que al mover el sprite de Filip por la escena hay que seleccionar el contenedor "Filip" en la Hierarchy, y mover eso. Si se pincha en Filip en la escena, se selecciona el Sprite hijo, y al mover el sprite se jode la animación :(. Por lo tanto, el Sprite hijo de "Filip" SIEMPRE DEBE ESTAR EN LA POSICIÓN 0,0,0.
