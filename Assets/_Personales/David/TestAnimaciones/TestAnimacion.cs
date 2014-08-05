@@ -60,7 +60,21 @@ public class TestAnimacion : MonoBehaviour
 		}
 		if (Input.GetButtonDown("Fire1"))
 		{
-			m_animator.SetTrigger("ataque");
+			// Si no estamos con el escudo, lanzamos un ataque
+			if (m_equippedWeapon != 3)
+			{
+				m_animator.SetTrigger("ataque");
+			}
+			// Si es el escudo, defendemos mientras se pulse el boton
+			else
+			{
+				m_animator.SetBool("defendiendo", true);
+			}
+		}
+		// Cuando se suelta el boton, dejamos de defender
+		if (Input.GetButtonUp("Fire1"))
+		{
+			m_animator.SetBool("defendiendo", false);
 		}
 		if (Input.GetButtonDown("Fire2"))
 		{

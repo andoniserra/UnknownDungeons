@@ -1,23 +1,26 @@
-Variables de animación de Filip
+﻿Variables de animación de Filip
 -------------------------------
 
 Las direcciones son un integer (direccion) de 4 valores: 		0-norte, 1-este, 2-sur, 3-oeste.
 Las armas equipadas son otro integer (arma) de 4 valores:		0-espada, 1-arco, 2-magia, 3-escudo.
-La acción de andar es un booleano (andando):					true-andando, false-quieto.
+La acción de andar es un booleano (andando):				true-andando, false-quieto.
 Atacar es un trigger (ataque), cuando se activa se anima el ataque y cuando termina la animación se sigue con lo que sea.
 Recibir daño es otro trigger (herido), cuando se activa se anima el parpadeo superponiéndose a lo que sea.
+Y defender con el escudo es un booleano (defendiendo):			true-defendiendo, false-no defendiendo
 
 Teniendo en cuenta todo lo anterior y en resumen, hay que utilizar los siguientes comandos:
-- Al andar en cualquier dirección: 		animator.SetBool("andando", true);
-- Al andar hacia arriba/norte:			animator.SetInteger("direccion", 0);
-- Al andar hacia la derecha/este: 		animator.SetInteger("direccion", 1);
+- Al andar en cualquier dirección: 			animator.SetBool("andando", true);
+- Al andar hacia arriba/norte:				animator.SetInteger("direccion", 0);
+- Al andar hacia la derecha/este: 			animator.SetInteger("direccion", 1);
 - Al andar hacia abajo/sur:				animator.SetInteger("direccion", 2);
-- Al andar hacia la izquierda/oeste: 	animator.SetInteger("direccion", 3);
+- Al andar hacia la izquierda/oeste: 			animator.SetInteger("direccion", 3);
 - Al dejar de andar:					animator.SetBool("andando", false);
-- Al atacar:							animator.SetTrigger("ataque");
-- Al ser herido:						animator.SetTrigger("herido");
+- Al atacar (si arma no es escudo):			animator.SetTrigger("ataque");
+- Al ser herido:					animator.SetTrigger("herido");
 - Al cambiar de arma:					animator.SetInteger("arma", numero_del_arma_equipada);
+- Al defender (botón ataque con escudo equipado):	animator.SetBool("defendiendo", true);
+- Al soltar el botón de ataque: 			animator.SetBool("defendiendo", false);
 
 Se puede hacer todo esto dentro del mismo script de movimiento o acciones del personaje en los lugares que corresponda, o realizar un script separado para las animaciones que simplemente compruebe una serie de estados que marquen los otros scripts y lance estos comandos en consecuencia.
 
-En el Script Assets/David/TestAnimacion hay un ejemplo muy básico de esto, pero claro no gestiona nada tipo que cuando el personaje ataque no se pueda mover o esas cosas.
+En el Script Assets/_Personales/David/TestAnimacion hay un ejemplo muy básico de esto, pero claro no gestiona nada tipo que cuando el personaje ataque no se pueda mover o esas cosas.
