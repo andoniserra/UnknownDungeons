@@ -3,35 +3,73 @@ using System.Collections;
 
 public class Menu : MonoBehaviour {
 
+	private float timeUpdate = 0.0f;
+	private float leerControl = 0.1f;
+	private int posFlec = 0;
+	private GameObject flecha;
+	private int playerPos = 0;
+
 	// Use this for initialization
 	void Start () {
 
-		/*
-		GameObject kek = new GameObject();
-		kek.AddComponent(typeof(SpriteRenderer));
-		SpriteRenderer imagen2 = kek.GetComponent<SpriteRenderer>();
-		imagen2.sprite = Simbolos.Cat;
-		imagen2.sortingLayerName = "Background";
-		imagen2.transform.position = Simbolos.colocar8x8(2,17);
-		*/
+		flecha = new GameObject();
+		flecha.AddComponent(typeof(SpriteRenderer));
+		pintarMenu();
 
-		//Simbolos.caja(new Vector2(0,0), new Vector2(19,2));
-		//Simbolos.print("abcdefghijklmnopqrstuvwxyz0123456789!?", new Vector2(0,17));
-
-		Simbolos.caja(new Vector2 (0,0), new Vector2(19,2),"hola caracola!");
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	
-	}
-	/*
-		Debug.Log("herpaderpa");
-		Sprite[] letras = Resources.LoadAll<Sprite>("Sprites/tipografia");
 
-		foreach( Sprite sp in letras){
-			Debug.Log(sp.name);
+		float pulsacion = Input.GetAxis("Vertical");
+
+		if(Time.time > timeUpdate){
+			timeUpdate += leerControl;
+			
+			if(pulsacion > 0){
+				Debug.Log ("arriba");
+				posFlec -= 1;
+				if (posFlec < 0)
+					posFlec = 2;
+			}else if(pulsacion < 0){
+				Debug.Log ("abajo");
+				posFlec += 1;
+				if (posFlec > 2)
+					posFlec = 0;
+			}
 		}
-		Debug.Log("herpadorp");
-	 */
+		pintarflecha();
+		
+		if (Input.GetButtonDown("Fire")){
+			Debug.Log("fire!!!!");
+		}
+
+		if (Input.GetButtonDown("Defend")){
+			Debug.Log("defend");
+		}
+
+		if (Input.GetButtonDown("Select")){
+			Debug.Log("select");
+		}
+
+		if (Input.GetButtonDown("Start")){
+			Debug.Log("start");
+		}
+
+
+
+	}
+
+	private void pintarMenu(){
+		Simbolos.caja(new Vector2 (4,11), new Vector2(15,15));
+		Simbolos.print("start", new Vector2(7,14));
+		Simbolos.print("options",new Vector2(7,13));
+		Simbolos.print("halp!", new Vector2(7,12));
+		Simbolos.colocarImagen(new GameObject(), Simbolos.Cat, new Vector2(12,12));
+	}
+
+	private void pintarflecha(){
+		Simbolos.colocarImagen(flecha, Simbolos.Right, new Vector2(6,14 - posFlec));
+	}
+
 }

@@ -3,6 +3,8 @@ using System.Collections;
 
 public static class Simbolos {
 
+	#region Simbolos y letras
+
 	public static Sprite Ex {
 		get{return Resources.LoadAll<Sprite>("Sprites/tipografia")[38];}
 	}
@@ -64,7 +66,7 @@ public static class Simbolos {
 		get{return Resources.LoadAll<Sprite>("Sprites/tipografia")[57];}
 	}
 
-	private static Sprite getLetra(char pLetra){
+	public static Sprite getLetra(char pLetra){
 
 		int num;
 		
@@ -114,7 +116,14 @@ public static class Simbolos {
 		return Resources.LoadAll<Sprite>("Sprites/tipografia")[num];
 	}
 
+	#endregion 
 
+	/// <summary>
+	/// Escribe en las coordenadas indicadas el texto
+	/// Si se llega al final de la pantalla salta a la siguiente linea
+	/// </summary>
+	/// <param name="pStr">String a escribir</param>
+	/// <param name="pPos">Posicion en la que empezar a escribir</param>
 	public static void print (string pStr, Vector2 pPos){
 		Vector2 Posicion = pPos;
 
@@ -128,6 +137,13 @@ public static class Simbolos {
 		}
 	}
 
+	/// <summary>
+	/// Escribe el texto indicado en unas coordenadas acotadas
+	/// Si el texto supera el espacio de las coordenadas deja de escribirlo
+	/// </summary>
+	/// <param name="pStr">String a escribir.</param>
+	/// <param name="pPos">Posicion inicial.</param>
+	/// <param name="pPosMax">Posicion final.</param>
 	public static void printAcot (string pStr, Vector2 pPos, Vector2 pPosMax){
 
 		Vector2 Posicion = pPos;
@@ -145,10 +161,23 @@ public static class Simbolos {
 		}
 	}
 
-	public static Vector3 colocar8x8(float posX, float posY){
+	/// <summary>
+	/// Devuelve el vector correspondiente para las coordenadas indicadas.
+	/// Horizontalmente desde 0 a 19
+	/// Verticalmente desde 0 a 17
+	/// </summary>
+	/// <param name="posX">Posicion x.</param>
+	/// <param name="posY">Posicion y.</param>
+	private static Vector3 colocar8x8(float posX, float posY){
 		return new Vector3(-76f + (posX*8),-68 + (posY * 8));
 	}
 
+
+	/// <summary>
+	/// Dibuja una caja entre las coordenadas indicadas
+	/// </summary>
+	/// <param name="pPos1">Posicion inicia (abajo izquierda).</param>
+	/// <param name="pPos2">Posicion final (arriba derecha).</param>
 	public static void caja(Vector2 pPos1, Vector2 pPos2){
 		//pintamos las esquinas
 		colocarImagen(new GameObject(), Simbolos.BorderDownLeft, pPos1);
@@ -174,6 +203,12 @@ public static class Simbolos {
 		} 
 	}
 
+	/// <summary>
+	/// Dibuja una caja entre las coordenadas indicadas con texto en su interior
+	/// </summary>
+	/// <param name="pPos1">Posicion inicia (abajo izquierda).</param>
+	/// <param name="pPos2">Posicion final (arriba derecha).</param>
+	/// <param name="pStr">Texto a mostrar.</param>
 	public static void caja(Vector2 pPos1, Vector2 pPos2, string pStr){
 
 		Vector2 posCajaIni = pPos1;
@@ -185,9 +220,18 @@ public static class Simbolos {
 
 	}
 
-	private static void colocarImagen(GameObject pGo, Sprite pSprite, Vector2 pPos){
-		pGo.AddComponent(typeof(SpriteRenderer));
+	/// <summary>
+	/// Coloca la imagen en la posicion indicada.
+	/// </summary>
+	/// <param name="pGo">Objeto que contendra la imagen.</param>
+	/// <param name="pSprite">Sprite.</param>
+	/// <param name="pPos">P position.</param>
+	public static void colocarImagen(GameObject pGo, Sprite pSprite, Vector2 pPos){
 		SpriteRenderer imagen = pGo.GetComponent<SpriteRenderer>();
+		if (imagen == null){
+			pGo.AddComponent(typeof(SpriteRenderer));
+			imagen = pGo.GetComponent<SpriteRenderer>();
+		}
 		imagen.sprite = pSprite;
 		imagen.sortingLayerName = "Background";
 		imagen.transform.position = Simbolos.colocar8x8(pPos.x,pPos.y);
