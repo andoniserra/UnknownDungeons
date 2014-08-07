@@ -93,6 +93,8 @@ public class MobState : MonoBehaviour
 		{
 			m_hp -= p_damage;
 			m_beenHit = true;
+			// Reproducir sonido mob herido
+			SoundHelper.PlayMobHit();
 			if (m_hp <= 0)
 			{
 				m_dead = true;

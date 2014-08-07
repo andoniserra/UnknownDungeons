@@ -117,6 +117,9 @@ public class FilipState : MonoBehaviour
 				m_beenHit = true;
 				m_canMove = false;
 				m_animator.SetTrigger("herido");
+
+				// reproducir sonido herido
+				SoundHelper.PlayPlayerHit();
 				if (m_hp <= 0)
 				{
 					m_dead = true;
@@ -200,6 +203,8 @@ public class FilipState : MonoBehaviour
 					swordPosition,
 					this.transform.rotation) as Transform ;
 				sword.transform.Rotate(Vector3.forward * swordRotation);
+				// Reproducir el sonido de la espada
+				SoundHelper.PlaySwordSwing();
 				break;
 
 			case 1: // Arco
@@ -216,6 +221,9 @@ public class FilipState : MonoBehaviour
 				arrow.transform.Rotate(Vector3.forward * arrowRotation);
 				//ProjectileMovement movement = projectile.GetComponent<ProjectileMovement>();
 				//movement.m_direction = direction;
+
+				// Reproducir sonido flecha
+				SoundHelper.PlayArrowShot();
 				break;
 
 			case 2: // Magia
@@ -229,6 +237,8 @@ public class FilipState : MonoBehaviour
 					magicPosition,
 					this.transform.rotation) as Transform ;
 				magic.transform.Rotate(Vector3.forward * magicRotation);
+				// Reproducir sonido bola magica
+				SoundHelper.PlayMagicBall();
 				break;
 
 			default:
