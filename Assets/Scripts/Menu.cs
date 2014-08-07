@@ -21,6 +21,8 @@ public class Menu : MonoBehaviour {
 	public AudioSource selectSound;
 	public AudioSource menuMusic;
 
+	public string m_startLevel;
+
 	// Use this for initialization
 	void Start () {
 		pintarMenu();
@@ -68,6 +70,12 @@ public class Menu : MonoBehaviour {
 			}
 
 			playerPos = posFlec;
+
+			// Para cargar la escena de los slimes
+			if (posFlec == 0)
+			{
+				Application.LoadLevel(m_startLevel);
+			}
 
 			if(posFlec == 1){
 				posFlec = 0;
