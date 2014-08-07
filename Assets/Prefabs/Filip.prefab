@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: Filip
   m_TagString: Untagged
@@ -30,6 +31,8 @@ GameObject:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
   - 95: {fileID: 9500000}
+  - 114: {fileID: 11400006}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -44,7 +47,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: 1, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -86,8 +89,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2, y: 3}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1.5}
+  m_Center: {x: 0, y: -.25}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -154,12 +157,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f283c813279cce240b89e8e556878e25, type: 3}
+  m_Script: {fileID: 11500000, guid: 6721efdb4614ecf409a2037a8d312d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_move: 1
-  m_speed: {x: 6, y: 6, z: 0}
-  m_equippedWeapon: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,6 +172,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: {x: 32, y: 32}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f056367f4cfda4bbfcf922944ccbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4592b4b6d59c4a747b4da785e11081ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56896e8ce197dd4b99058ebedbbe41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_move: 1
+  m_hp: 5
+  m_equippedWeapon: 0
+  m_arrow: {fileID: 400000, guid: 40e398625bdee1c44aaf0eedfa5692d8, type: 2}
+  m_arrowStart: 8
+  m_swordSwing: {fileID: 400000, guid: d799cecc53ef21f44b16ef0aef6e15f1, type: 2}
+  m_swordRange: 16
+  m_magicBall: {fileID: 400006, guid: ae6f741fb01c41e4db394949f8adc7e1, type: 2}
+  m_magicBallRange: 24
+  m_facingDirection: 2
+  m_attacking: 0
+  m_attackCooldown: 1
+  m_defending: 0
+  m_beenHit: 0
+  m_beenHitCooldown: 1
+  m_canMove: 1
+  m_canMoveCooldown: .5
+  m_dead: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

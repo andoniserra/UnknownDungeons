@@ -6,13 +6,17 @@ public class TestAnimacion : MonoBehaviour
 	public bool m_move = false;
 	public Vector3 m_speed = new Vector3(4, 4, 0);
 
-	private const int m_numberOfWeapons = 4;
+	private const int m_numberOfWeapons = 3;
 
 	[Range(0, m_numberOfWeapons -1)]
 	public int m_equippedWeapon = 0;
 
-	Animator m_animator;
-	Movement m_movement;
+
+
+	private Animator m_animator;
+	private Movement m_movement;
+
+	private FilipState m_filipState;
 
 
 
@@ -24,6 +28,7 @@ public class TestAnimacion : MonoBehaviour
 		{
 			m_movement = GetComponent<Movement>();
 		}
+		m_filipState = GetComponent<FilipState>();
 
 	}
 	
@@ -38,21 +43,25 @@ public class TestAnimacion : MonoBehaviour
 		{
 			m_animator.SetBool("andando", true);
 			m_animator.SetInteger("direccion", 1);
+			//m_filipState.FaceDirection(1);
 		}
 		if (inputX < 0)
 		{
 			m_animator.SetBool("andando", true);
 			m_animator.SetInteger("direccion", 3);
+			//m_filipState.FaceDirection(3);
 		}
 		if (inputY > 0)
 		{
 			m_animator.SetBool("andando", true);
 			m_animator.SetInteger("direccion", 0);
+			//m_filipState.FaceDirection(0);
 		}
 		if (inputY < 0)
 		{
 			m_animator.SetBool("andando", true);
 			m_animator.SetInteger("direccion", 2);
+			//m_filipState.FaceDirection(2);
 		}
 		if (inputX == 0 && inputY == 0)
 		{
@@ -60,25 +69,16 @@ public class TestAnimacion : MonoBehaviour
 		}
 		if (Input.GetButtonDown("Fire1"))
 		{
-			// Si no estamos con el escudo, lanzamos un ataque
-			if (m_equippedWeapon != 3)
-			{
-				m_animator.SetTrigger("ataque");
-			}
-			// Si es el escudo, defendemos mientras se pulse el boton
-			else
-			{
-				m_animator.SetBool("defendiendo", true);
-			}
+			m_filipState.Attack();
 		}
 		// Cuando se suelta el boton, dejamos de defender
-		if (Input.GetButtonUp("Fire1"))
+		if (Input.GetButtonUp("Fire2"))
 		{
 			m_animator.SetBool("defendiendo", false);
 		}
 		if (Input.GetButtonDown("Fire2"))
 		{
-			m_animator.SetTrigger("herido");
+			m_animator.SetBool("defendiendo", true);
 		}
 
 		// Cambiar de arma
@@ -111,6 +111,17 @@ public class TestAnimacion : MonoBehaviour
 		if (m_equippedWeapon >= m_numberOfWeapons)
 		{
 			m_equippedWeapon = 0;
+		}
+	}
+
+	void OnTriggerEnter2D (Collider2D p_collider)
+	{
+		//print ("triggered!");
+		if (p_collider.gameObject.tag == "Door")
+		{
+			print ("It's a door!");
+			Door door = p_collider.gameObject.GetComponent<Door>();
+			Application.LoadLevel(door.m_targetScene);
 		}
 	}
 }

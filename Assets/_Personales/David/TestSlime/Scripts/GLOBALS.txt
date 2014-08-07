@@ -1,0 +1,1 @@
+Definir en GLOBALS.cs el ratio "Pixels to units" que se está usando para los gráficos.
