@@ -65,6 +65,9 @@ public static class Simbolos {
 	public static Sprite Cat {
 		get{return Resources.LoadAll<Sprite>("Sprites/tipografia")[57];}
 	}
+	public static Sprite Blank {
+		get{return Resources.LoadAll<Sprite>("Sprites/tipografia")[58];}
+	}
 
 	public static Sprite getLetra(char pLetra){
 
@@ -228,6 +231,7 @@ public static class Simbolos {
 	/// <param name="pPos">P position.</param>
 	public static void colocarImagen(GameObject pGo, Sprite pSprite, Vector2 pPos){
 		SpriteRenderer imagen = pGo.GetComponent<SpriteRenderer>();
+		pGo.tag = "TempTile";
 		if (imagen == null){
 			pGo.AddComponent(typeof(SpriteRenderer));
 			imagen = pGo.GetComponent<SpriteRenderer>();
