@@ -20,10 +20,12 @@ public class MobState : MonoBehaviour
 	/// </summary>
 	public bool m_dead = false;
 
+	private BoxCollider2D m_collider;
 
 	void Awake () 
 	{
 		m_beenHitDefaultCooldown = m_beenHitCooldown;
+		m_collider = GetComponent<BoxCollider2D>();
 	}
 	
 
@@ -32,6 +34,10 @@ public class MobState : MonoBehaviour
 		if (m_dead)
 		{
 			Destroy(gameObject, 1);
+			if (m_collider.enabled)
+			{
+				m_collider.enabled = false;
+			}
 		}
 
 		if (m_beenHit)

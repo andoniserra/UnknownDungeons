@@ -45,7 +45,7 @@ public class SlimeIA : MonoBehaviour
 		{
 			// Si nos han dado, no calculamos otro movimiento, 
 			// esperamos siguiente turno
-			if (!m_mobState.m_beenHit)
+			if (!m_mobState.m_beenHit && !m_mobState.m_dead)
 			{
 				DecideAction();
 			}
