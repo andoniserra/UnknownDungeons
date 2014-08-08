@@ -6,7 +6,7 @@ using System.Collections;
 /// Cuando se mueve, se mueve durante 1 segundo en una dirección aleatoria
 /// y luego espera al siguiente ciclo.
 /// </summary>
-public class SlimeIA : MonoBehaviour 
+public class SlimeAI : MonoBehaviour 
 {
 	public enum Direction { North, East, South, West };
 	public enum Action { Wait, Jump };

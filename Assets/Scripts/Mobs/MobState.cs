@@ -22,10 +22,14 @@ public class MobState : MonoBehaviour
 
 	private BoxCollider2D m_collider;
 
+	// Referencia al animator para desencadenar las animaciones
+	private Animator m_animator;
+
 	void Awake () 
 	{
 		m_beenHitDefaultCooldown = m_beenHitCooldown;
 		m_collider = GetComponent<BoxCollider2D>();
+		m_animator = GetComponentInChildren<Animator>();
 	}
 	
 
@@ -101,6 +105,7 @@ public class MobState : MonoBehaviour
 			m_beenHit = true;
 			// Reproducir sonido mob herido
 			SoundHelper.PlayMobHit();
+			m_animator.SetTrigger("herido");
 			if (m_hp <= 0)
 			{
 				m_dead = true;
