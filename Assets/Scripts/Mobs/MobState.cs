@@ -97,7 +97,7 @@ public class MobState : MonoBehaviour
 
 	public void ApplyDamage ( int p_damage )
 	{
-		print ( p_damage );
+		//print ( p_damage );
 		//print ("Filip me ha dado!");
 		if (!m_beenHit)
 		{

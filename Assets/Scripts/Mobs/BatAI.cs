@@ -1,12 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BatAI : MonoBehaviour {
-
-	public enum Direction { North, East, South, West };
-	public enum Action { Wait, Fly };
-	
-	
+public class BatAI : MonoBehaviour 
+{	
 	// Tiempo en segundos entre las acciones
 	public float m_cooldown = 3f;
 	private float m_defaultCooldown;
@@ -15,10 +11,10 @@ public class BatAI : MonoBehaviour {
 	private float m_defaultFlyCooldown;
 	
 	
-	public Action m_action = Action.Wait;
+	public GLOBALS.Action m_action = GLOBALS.Action.Wait;
 	
 	// Destino elegido para el salto
-	public Direction m_flyDirection = Direction.North;
+	public GLOBALS.Direction m_flyDirection = GLOBALS.Direction.North;
 	
 	private Movement m_movement;
 	
@@ -46,16 +42,16 @@ public class BatAI : MonoBehaviour {
 			}
 			else
 			{
-				m_action = Action.Wait;
+				m_action = GLOBALS.Action.Wait;
 			}
 			
 		}
 		
-		if (m_action == Action.Fly)
+		if (m_action == GLOBALS.Action.Fly)
 		{
 			if (FlyClock())
 			{
-				m_action = Action.Wait;
+				m_action = GLOBALS.Action.Wait;
 			}
 			else
 			{
@@ -101,45 +97,45 @@ public class BatAI : MonoBehaviour {
 		switch (randomAction)
 		{
 		case 0:
-			m_action = Action.Wait;
+			m_action = GLOBALS.Action.Wait;
 			break;
 		case 1:
-			m_action = Action.Fly;
+			m_action = GLOBALS.Action.Fly;
 			break;
 		default:
-			m_action = Action.Wait;
+			m_action = GLOBALS.Action.Wait;
 			break;
 		}
 		
-		if (m_action == Action.Fly)
+		if (m_action == GLOBALS.Action.Fly)
 		{
 			m_flyDirection = DecideDirection();
 		}
 	}
 	
 	
-	private Direction DecideDirection ()
+	private GLOBALS.Direction DecideDirection ()
 	{
 		int randomDir = Random.Range(0,4);
 		
-		Direction direction;
+		GLOBALS.Direction direction;
 		
 		switch (randomDir)
 		{
 		case 0:
-			direction = Direction.North;
+			direction = GLOBALS.Direction.North;
 			break;
 		case 1:
-			direction = Direction.East;
+			direction = GLOBALS.Direction.East;
 			break;
 		case 2:
-			direction = Direction.South;
+			direction = GLOBALS.Direction.South;
 			break;
 		case 3:
-			direction = Direction.West;
+			direction = GLOBALS.Direction.West;
 			break;
 		default:
-			direction = Direction.North;
+			direction = GLOBALS.Direction.North;
 			break;
 		}
 		
@@ -147,22 +143,22 @@ public class BatAI : MonoBehaviour {
 	}
 	
 	
-	private void Fly ( Direction p_direction )
+	private void Fly ( GLOBALS.Direction p_direction )
 	{
 		Vector2 axisValue = Vector2.zero;
 		
 		switch (p_direction)
 		{
-		case Direction.North:
+		case GLOBALS.Direction.North:
 			axisValue = new Vector2 (0f,1f);
 			break;
-		case Direction.East:
+		case GLOBALS.Direction.East:
 			axisValue = new Vector2 (1f,0f);
 			break;
-		case Direction.South:
+		case GLOBALS.Direction.South:
 			axisValue = new Vector2 (0f,-1f);
 			break;
-		case Direction.West:
+		case GLOBALS.Direction.West:
 			axisValue = new Vector2 (-1f,0f);
 			break;
 		}

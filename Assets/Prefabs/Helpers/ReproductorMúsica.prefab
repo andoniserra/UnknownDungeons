@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a20f20c77528b4989fe3cf94ff3ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_menuMusic: {fileID: 8300000, guid: 5ba16ce54da57e940ac92d4592cbeba9, type: 3}
-  m_level01Music: {fileID: 8300000, guid: e0ff2d037f49d91409d85a771fe144dd, type: 3}
+  m_menuMusic: {fileID: 8300000, guid: e657b5a29e3cc734faf0ca31beb99962, type: 3}
+  m_level01Music: {fileID: 8300000, guid: cfb8e5dad48bba8449a98d95212596a0, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

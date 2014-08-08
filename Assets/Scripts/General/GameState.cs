@@ -14,6 +14,8 @@ public class GameState : MonoBehaviour
 	public GameObject[] m_doorList;
 
 	private bool m_doorsOpen = false;
+
+	private GLOBALS.Direction m_lastDoorDirection = GLOBALS.Direction.South;
 	
 	
 	// Al cargar el script comprobamos si ya existe una instancia
@@ -51,7 +53,7 @@ public class GameState : MonoBehaviour
 
 	void Update () 
 	{
-		if (m_enemyCount <= 0 && !m_doorsOpen)
+		if (m_enemyCount <= 0 && !m_doorsOpen || Input.GetKeyDown(KeyCode.K))
 		{
 			print ("All dead!");
 			foreach (GameObject go in m_doorList)
@@ -88,16 +90,24 @@ public class GameState : MonoBehaviour
 	}
 
 
-	public static void LoadScene ( string p_scene )
+	public static void LoadScene ( string p_scene, GLOBALS.Direction p_doorDirection )
 	{
+		//print ("LoadScene");
+		myGameState.m_lastDoorDirection = p_doorDirection;
 		Application.LoadLevel(p_scene);
 	}
 
 
 	void OnLevelWasLoaded(int level) 
 	{
-		GameState.myGameState.AddAllEnemies();
-		GameState.myGameState.AddAllDoors();
-		m_doorsOpen = false;
+		//print ("OnLevelWasLoaded");
+		if (Application.loadedLevelName != "TestGameOver")
+		{
+			GameState.myGameState.AddAllEnemies();
+			GameState.myGameState.AddAllDoors();
+			m_doorsOpen = false;
+			// Recolocamos a Filip
+			SpawnSpot.SpawnFilip(myGameState.m_lastDoorDirection);
+		}
 	}
 }

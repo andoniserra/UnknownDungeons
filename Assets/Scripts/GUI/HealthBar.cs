@@ -3,9 +3,9 @@ using System.Collections;
 
 public class HealthBar : MonoBehaviour 
 {
-	public Transform m_filip;
+	//public Transform m_filip;
 
-	private FilipState m_filipState;
+	//private FilipState m_filipState;
 	private int m_health = 0;
 	private Heart m_heart1 = null;
 	private Heart m_heart2 = null;
@@ -16,7 +16,7 @@ public class HealthBar : MonoBehaviour
 
 	void Start () 
 	{
-		m_filipState = m_filip.GetComponent<FilipState>();
+		//m_filipState = m_filip.GetComponent<FilipState>();
 		m_heart1 = transform.GetChild(0).GetComponent<Heart>();
 		m_heart2 = transform.GetChild(1).GetComponent<Heart>();
 		m_heart3 = transform.GetChild(2).GetComponent<Heart>();
@@ -27,7 +27,7 @@ public class HealthBar : MonoBehaviour
 
 	void Update () 
 	{
-		m_health = m_filipState.m_hp;
+		m_health = FilipState.myFilip.m_hp;
 		
 		if (m_health == 0)
 		{

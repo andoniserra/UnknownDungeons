@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Door : MonoBehaviour 
 {
+	public GLOBALS.Direction m_doorDirection = GLOBALS.Direction.North;
+
 	public bool m_open = false;
 
 	public Sprite m_closedSprite;

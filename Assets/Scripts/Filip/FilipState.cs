@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FilipState : MonoBehaviour 
 {
+	public static FilipState myFilip = null;
+
 	// Si Filip se debe mover o no (debug de animaciones)
 	public bool m_move = true;
 
@@ -56,6 +58,23 @@ public class FilipState : MonoBehaviour
 
 	void Awake () 
 	{
+		// Si no existe
+		if (myFilip == null)
+		{
+			//print ("dont destroy" + gameObject.GetInstanceID());
+			// Marcamos el objeto para no ser destruido al cambiar de escena
+			DontDestroyOnLoad(transform.gameObject);
+			// Asignamos esta instancia a la instancia unica Singleton
+			myFilip = this;
+		}
+		// Si ya existia
+		else if (myFilip != this)
+		{
+			//print ("destroy!" + gameObject.GetInstanceID());
+			// Destruimos este objeto
+			Destroy(gameObject);
+		}
+
 		// Almacenamos los CDs por si se han ajustado en el editor
 		m_attackDefaultCooldown = m_attackCooldown;
 		m_beenHitDefaultCooldown = m_beenHitCooldown;
@@ -112,7 +131,7 @@ public class FilipState : MonoBehaviour
 		{
 			if (!m_beenHit && !m_defending)
 			{
-				print ("Damage!");
+				//print ("Damage!");
 				m_hp -= 1;
 				m_beenHit = true;
 				m_canMove = false;
@@ -138,7 +157,7 @@ public class FilipState : MonoBehaviour
 			//print ("It's a door!");
 			Door door = p_collider.gameObject.GetComponent<Door>();
 
-			GameState.LoadScene(door.m_targetScene);
+			GameState.LoadScene(door.m_targetScene, door.m_doorDirection);
 
 			//Application.LoadLevel(door.m_targetScene);
 		}
@@ -151,25 +170,25 @@ public class FilipState : MonoBehaviour
 		{
 			m_animator.SetBool("andando", true);
 			m_animator.SetInteger("direccion", 1);
-			FaceDirection(1);
+			FaceDirection(GLOBALS.Direction.East);
 		}
 		if (p_inputAxis.x < 0)
 		{
 			m_animator.SetBool("andando", true);
 			m_animator.SetInteger("direccion", 3);
-			FaceDirection(3);
+			FaceDirection(GLOBALS.Direction.West);
 		}
 		if (p_inputAxis.y > 0)
 		{
 			m_animator.SetBool("andando", true);
 			m_animator.SetInteger("direccion", 0);
-			FaceDirection(0);
+			FaceDirection(GLOBALS.Direction.North);
 		}
 		if (p_inputAxis.y < 0)
 		{
 			m_animator.SetBool("andando", true);
 			m_animator.SetInteger("direccion", 2);
-			FaceDirection(2);
+			FaceDirection(GLOBALS.Direction.South);
 		}
 		if (p_inputAxis.x == 0 && p_inputAxis.y == 0)
 		{
@@ -285,9 +304,26 @@ public class FilipState : MonoBehaviour
 	}
 
 
-	private void FaceDirection(int p_direction)
+	public void FaceDirection(GLOBALS.Direction p_direction)
 	{
-		m_facingDirection = p_direction;
+		switch (p_direction)
+		{
+		case GLOBALS.Direction.North:
+			m_facingDirection = 0;
+			break;
+		case GLOBALS.Direction.East:
+			m_facingDirection = 1;
+			break;
+		case GLOBALS.Direction.South:
+			m_facingDirection = 2;
+			break;
+		case GLOBALS.Direction.West:
+			m_facingDirection = 3;
+			break;
+		default:
+			m_facingDirection = 0;
+			break;
+		}
 	}
 
 
