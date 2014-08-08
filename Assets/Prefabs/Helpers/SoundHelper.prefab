@@ -103,6 +103,7 @@ MonoBehaviour:
   m_swordSwing: {fileID: 8300000, guid: e6319d18906b4c04eb37638bc4dd000e, type: 3}
   m_arrowShot: {fileID: 8300000, guid: 490f7200919857f418b3466f4e6b913f, type: 3}
   m_magicBall: {fileID: 8300000, guid: d344d1358f4477044bbd8b83ca3752ed, type: 3}
+  m_menuArrow: {fileID: 8300000, guid: 4eea1fe42574fd04e83e9730c850c059, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

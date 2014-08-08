@@ -5,6 +5,9 @@ public class Music : MonoBehaviour {
 
 	public static Music music;
 
+	public AudioClip m_menuMusic;
+	public AudioClip m_level01Music;
+
 	void Awake () 
 	{
 		// Si no existe
@@ -21,5 +24,19 @@ public class Music : MonoBehaviour {
 			// Destruimos este objeto
 			Destroy(gameObject);
 		}
+	}
+
+
+	public static void PlayMenuMusic ()
+	{
+		music.audio.clip = music.m_menuMusic;
+		music.audio.Play();
+	}
+
+
+	public static void PlayLevel01Music ()
+	{
+		music.audio.clip = music.m_level01Music;
+		music.audio.Play();
 	}
 }

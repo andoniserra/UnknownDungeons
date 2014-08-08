@@ -13,6 +13,7 @@ public class SoundHelper : MonoBehaviour
 	public AudioClip m_swordSwing;
 	public AudioClip m_arrowShot;
 	public AudioClip m_magicBall;
+	public AudioClip m_menuArrow;
 	#endregion
 	
 	
@@ -84,6 +85,14 @@ public class SoundHelper : MonoBehaviour
 	{
 		//print ("sound magicBall");
 		mySoundHelper.audio.clip = mySoundHelper.m_magicBall;
+		mySoundHelper.audio.Play();
+	}
+
+
+	public static void PlayMenuArrow ()
+	{
+		//print ("sound magicBall");
+		mySoundHelper.audio.clip = mySoundHelper.m_menuArrow;
 		mySoundHelper.audio.Play();
 	}
 }

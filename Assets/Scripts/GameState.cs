@@ -23,9 +23,10 @@ public class GameState : MonoBehaviour
 		if (myGameState == null)
 		{
 			// Marcamos el objeto para no ser destruido al cambiar de escena
-			// DontDestroyOnLoad(gameObject);
+			DontDestroyOnLoad(gameObject);
 			// Asignamos esta instancia a la instancia unica Singleton
 			myGameState = this;
+			//!!!!!!!!!!
 		}
 		// Si ya existia
 		else if (myGameState != this)
@@ -40,6 +41,11 @@ public class GameState : MonoBehaviour
 	{
 		AddAllEnemies();
 		AddAllDoors();
+		m_doorsOpen = false;
+
+		// TODO: Comprobar nivel en el que estamos para cambiar la musica si hace falta
+		Music.PlayLevel01Music();
+
 	}
 	
 
@@ -76,11 +82,22 @@ public class GameState : MonoBehaviour
 	}
 
 
+	public static void PlayerDead ()
+	{
+		Application.LoadLevel("TestGameOver");
+	}
 
 
+	public static void LoadScene ( string p_scene )
+	{
+		Application.LoadLevel(p_scene);
+	}
 
 
-
-
-
+	void OnLevelWasLoaded(int level) 
+	{
+		GameState.myGameState.AddAllEnemies();
+		GameState.myGameState.AddAllDoors();
+		m_doorsOpen = false;
+	}
 }

@@ -123,6 +123,7 @@ public class FilipState : MonoBehaviour
 				if (m_hp <= 0)
 				{
 					m_dead = true;
+					GameState.PlayerDead();
 				}
 			}
 		}
@@ -136,7 +137,10 @@ public class FilipState : MonoBehaviour
 		{
 			//print ("It's a door!");
 			Door door = p_collider.gameObject.GetComponent<Door>();
-			Application.LoadLevel(door.m_targetScene);
+
+			GameState.LoadScene(door.m_targetScene);
+
+			//Application.LoadLevel(door.m_targetScene);
 		}
 	}
 
