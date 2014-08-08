@@ -109,6 +109,8 @@ public class MobState : MonoBehaviour
 			if (m_hp <= 0)
 			{
 				m_dead = true;
+				// Descontamos el enemigo de la lista de enemigos de la escena
+				GameState.EnemyDead();
 			}
 		}
 	}

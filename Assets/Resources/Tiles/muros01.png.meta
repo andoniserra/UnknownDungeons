@@ -7,8 +7,8 @@ TextureImporter:
     21300004: M1_UM
     21300006: M1_UR
     21300008: M1_ML
-    21300010: M1_puerta_abierta
-    21300012: M1_puerta_cerrada
+    21300010: M1_puerta_cerrada
+    21300012: M1_puerta_abierta
     21300014: M1_MR
     21300016: M1_BL
     21300018: M1_BM
@@ -94,7 +94,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: M1_puerta_abierta
+    - name: M1_puerta_cerrada
       rect:
         serializedVersion: 2
         x: 19
@@ -104,7 +104,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: M1_puerta_cerrada
+    - name: M1_puerta_abierta
       rect:
         serializedVersion: 2
         x: 37

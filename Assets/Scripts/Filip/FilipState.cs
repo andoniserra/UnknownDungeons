@@ -134,7 +134,7 @@ public class FilipState : MonoBehaviour
 		//print ("triggered!");
 		if (p_collider.gameObject.tag == "Door")
 		{
-			print ("It's a door!");
+			//print ("It's a door!");
 			Door door = p_collider.gameObject.GetComponent<Door>();
 			Application.LoadLevel(door.m_targetScene);
 		}
