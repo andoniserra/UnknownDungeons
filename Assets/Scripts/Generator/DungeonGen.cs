@@ -14,11 +14,13 @@ public class DungeonGen : MonoBehaviour {
 				sala[x,y] = new GameObject();
 			}
 		}
-		muros1 = Resources.LoadAll<Sprite>("Resources/Sprites/muros01");
-		suelo1 = Resources.LoadAll<Sprite>("Resources/Sprites/suelos01");
+		muros1 = Resources.LoadAll<Sprite>("Tiles/muros01");
+		suelo1 = Resources.LoadAll<Sprite>("Tiles/suelos01");
 		generarEsquinas();
 		generarMuros ();
 		generarPuertas ();
+		generarRocas ();
+		generarAgujeros ();
 		generarSuelo ();
 		
 	}
@@ -31,75 +33,141 @@ public class DungeonGen : MonoBehaviour {
 	private void generarEsquinas(){
 		
 		//Esquina izquierda abajo
-		Mazmorras.colocarImagen(sala[0,0],muros1[1], new Vector2(0,0));
+		Mazmorras.colocarImagen(sala[0,0],muros1[0], new Vector2(0,0));
 		//Esquina derecha abajo
-		Mazmorras.colocarImagen(sala[9,0],muros1[0], new Vector2(9,0));
+		Mazmorras.colocarImagen(sala[9,0],muros1[2], new Vector2(9,0));
 		//Esquina arriba derecha
-		Mazmorras.colocarImagen(sala[0,7],muros1[3], new Vector2(0,7));
+		Mazmorras.colocarImagen(sala[0,7],muros1[7], new Vector2(0,7));
 		//Esquina arriba izquierda
-		Mazmorras.colocarImagen(sala[9,7],muros1[2], new Vector2(9,7));
+		Mazmorras.colocarImagen(sala[9,7],muros1[9], new Vector2(9,7));
 		
 	}
 	
 	private void generarPuertas(){
-		//Puertas aleatorias
-		int rand1 = Mathf.RoundToInt(Random.Range (1, 8)); //puerta abajo
-		int rand2 = Mathf.RoundToInt(Random.Range (1, 8)); //puerta arriba
-		int rand3 = Mathf.RoundToInt(Random.Range (1, 6)); //puerta derecha
-		int rand4 = Mathf.RoundToInt(Random.Range (1, 6)); //puerta izquierda
-		
-		GameObject puerta1 = sala [rand1, 0];
-		GameObject puerta2 = sala [rand2, 7];
-		GameObject puerta3 = sala [9, rand3];
-		GameObject puerta4 = sala [0, rand4];
-		
-		puerta1.tag = "puerta";
-		puerta2.tag = "puerta";
-		puerta3.tag = "puerta";
-		puerta4.tag = "puerta";
-		
-		Mazmorras.colocarImagen(puerta1, muros1[9], new Vector2(rand1,0));
-		Mazmorras.colocarImagen(puerta2, muros1[9], new Vector2(rand2,7));
-		Mazmorras.colocarImagen(puerta3, muros1[9], new Vector2(9,rand3));
-		Mazmorras.colocarImagen(puerta4, muros1[9], new Vector2(0,rand4));
-		
-		puerta1.transform.Rotate(Vector3.forward * -180);
-		puerta3.transform.Rotate(Vector3.forward * -90);
-		puerta4.transform.Rotate(Vector3.forward * -270);
-		
+		//Puerta Abajo
+		int rdm = Mathf.RoundToInt(Random.Range (1, 8));
+
+		GameObject puertaDown = sala [rdm, 0];
+		puertaDown.tag = "Door";
+		puertaDown.name = "Door";
+		Mazmorras.colocarImagen(puertaDown, muros1[6], new Vector2(rdm,0));
+		puertaDown.transform.Rotate(Vector3.forward * -180);
+
+		//Puerta Arriba
+		rdm = Mathf.RoundToInt(Random.Range (1, 8));
+
+		GameObject puertaUp = sala[rdm,7];
+		puertaUp.tag = "Door";
+		puertaUp.name = "Door";
+		Mazmorras.colocarImagen(sala[rdm,7], muros1[6], new Vector2(rdm,7));
+
+
+		//Puerta Derecha
+		rdm = Mathf.RoundToInt(Random.Range (1, 6));
+
+		GameObject puertaRight = sala[9,rdm];
+		puertaRight.tag = "Door";
+		puertaRight.name = "Door";
+		Mazmorras.colocarImagen(puertaRight, muros1[6], new Vector2(9,rdm));
+		puertaRight.transform.Rotate(Vector3.forward * -90);
+
+		//Puerta Izquierda
+		rdm = Mathf.RoundToInt(Random.Range (1, 6));
+
+		GameObject puertaLeft = sala[0,rdm];
+		puertaLeft.tag = "Door";
+		puertaLeft.name = "Door";
+		Mazmorras.colocarImagen(puertaLeft, muros1[6], new Vector2(0,rdm));
+		puertaLeft.transform.Rotate(Vector3.forward * -270);
+				
 	}
 	
 	private void generarMuros(){
 		//Muros
 		for (int x = 1; x <= 8; x++) {
-			if (!sala[x,0].CompareTag("puerta")){
-				Mazmorras.colocarImagen(sala[x,0], muros1[4], new Vector2(x,0));
+			//Muro Abajo
+			if (!sala[x,0].CompareTag("Door")){
+				GameObject muroDown = sala[x,0];
+				muroDown.tag = "Wall";
+				muroDown.name = "Wall";
+				Mazmorras.colocarImagen(muroDown, muros1[1], new Vector2(x,0));
 			}
-			if (!sala[x,7].CompareTag("puerta")){
-				Mazmorras.colocarImagen(sala[x,7], muros1[7], new Vector2(x,7));
+			//Muro Arriba
+			if (!sala[x,7].CompareTag("Door")){
+				GameObject muroUp = sala[x,7];
+				muroUp.tag = "Wall";
+				muroUp.name = "Wall";
+				Mazmorras.colocarImagen(muroUp, muros1[8], new Vector2(x,7));
 			}
 		}
 		
 		for (int y = 1; y <= 6; y++) {
-			if (!sala[0,y].CompareTag("puerta")){
-				Mazmorras.colocarImagen(sala[0,y], muros1[6], new Vector2(0,y));
+			if (!sala[0,y].CompareTag("Door")){
+				GameObject muroLeft = sala[0,y];
+				muroLeft.tag = "Wall";
+				muroLeft.name = "Wall";
+				Mazmorras.colocarImagen(muroLeft, muros1[3], new Vector2(0,y));
 			}
-			if (!sala[9,y].CompareTag("puerta")){
-				Mazmorras.colocarImagen(sala[9,y], muros1[5], new Vector2(9,y));
+			if (!sala[9,y].CompareTag("Door")){
+				GameObject muroRight = sala[9,y];
+				muroRight.tag = "Wall";
+				muroRight.name = "Wall";
+				Mazmorras.colocarImagen(muroRight, muros1[4], new Vector2(9,y));
+
 			}
 		}
 	}
 	//Rocas
 	private void generarRocas(){
-		
+		int numRocas = Mathf.RoundToInt(Random.Range (0, 7));
+
+		while (numRocas != 0) {
+			int xRoca = Mathf.RoundToInt(Random.Range (1, 8));
+			int yRoca = Mathf.RoundToInt(Random.Range (1, 6));
+
+			if (!((sala[xRoca+1, yRoca].CompareTag("Door")) || (sala[xRoca, yRoca+1].CompareTag("Door")) || (sala[xRoca-1, yRoca].CompareTag("Door")) || (sala[xRoca, yRoca-1].CompareTag("Door")) )){
+					GameObject rock =  sala[xRoca,yRoca];
+					Mazmorras.colocarImagen(rock, suelo1[2], new Vector2(xRoca,yRoca));
+					rock.name = "Rock";
+					rock.tag = "Rock";
+					numRocas = numRocas -1;
+			}
+		}
 	}
+
 	//Agujeros
-	
+	private void generarAgujeros(){
+		int numHole = Mathf.RoundToInt(Random.Range (0, 1));
+
+		while (numHole != 0) {
+			int xHole = Mathf.RoundToInt(Random.Range (1, 8));
+			int yHole = Mathf.RoundToInt(Random.Range (1, 6));
+			
+			if (!((sala[xHole+1, yHole].CompareTag("Door")) || (sala[xHole+1, yHole].CompareTag("Rock")) || (sala[xHole, yHole+1].CompareTag("Door")) || (sala[xHole-1, yHole].CompareTag("Door")) || (sala[xHole, yHole-1].CompareTag("Door")) || (sala[xHole+1, yHole].CompareTag("Wall")) || (sala[xHole+1, yHole-1].CompareTag("Door")) || (sala[xHole+1, yHole+1].CompareTag("Door")) )){
+				if (!sala[xHole+2, yHole].CompareTag("Door")){
+					GameObject hole =  sala[xHole,yHole];
+					GameObject hole2 =  sala[xHole+1,yHole];
+					Mazmorras.colocarImagen(hole, suelo1[0], new Vector2(xHole,yHole));
+					Mazmorras.colocarImagen(hole2, suelo1[1], new Vector2(xHole+1,yHole));
+					hole.name = "Hole";
+					hole.tag = "Hole";
+					hole2.tag = "Hole";
+					numHole = numHole -1;
+				}
+			}
+		}
+	}
 	//Suelo
 	private void generarSuelo(){
 		for (int x = 1; x <= 8; x++){
 			for (int y = 1; y <= 6; y++){
-				Mazmorras.colocarImagen (sala[x,y], suelo1[2], new Vector2(x,y));
+				if (!(sala[x,y].CompareTag("Rock") || (sala[x,y].CompareTag("Hole")) )){
+					GameObject floor = sala[x,y];
+					floor.tag = "Floor";
+					floor.name = "Floor";
+					Mazmorras.colocarImagen (floor, suelo1[3], new Vector2(x,y));
+
+				}
 			}
 		}
 	}
