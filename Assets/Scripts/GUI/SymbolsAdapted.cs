@@ -238,6 +238,7 @@ public class SymbolsAdapted : MonoBehaviour {
 			pGo.AddComponent(typeof(SpriteRenderer));
 			imagen = pGo.GetComponent<SpriteRenderer>();
 		}
+		pGo.AddComponent(typeof(ColorChanger));
 		imagen.sprite = pSprite;
 		imagen.sortingLayerName = "GUI";
 		imagen.sortingOrder = 2;
