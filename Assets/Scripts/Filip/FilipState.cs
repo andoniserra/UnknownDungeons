@@ -11,6 +11,9 @@ public class FilipState : MonoBehaviour
 	// Vida de Filip
 	public int m_hp = 5;
 
+	// Dinero de Filip
+	public int m_coins = 0;
+
 	// Numero de armas
 	private const int m_numberOfWeapons = 3;
 	
@@ -160,6 +163,12 @@ public class FilipState : MonoBehaviour
 			GameState.LoadScene(door.m_targetScene, door.m_doorDirection);
 
 			//Application.LoadLevel(door.m_targetScene);
+		}
+
+		if (p_collider.gameObject.tag == "Pickable")
+		{
+			myFilip.m_coins += 1;
+			Destroy(p_collider.gameObject);
 		}
 	}
 

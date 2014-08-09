@@ -20,6 +20,8 @@ public class MobState : MonoBehaviour
 	/// </summary>
 	public bool m_dead = false;
 
+	public Transform m_coin;
+
 	private BoxCollider2D m_collider;
 
 	// Referencia al animator para desencadenar las animaciones
@@ -37,6 +39,7 @@ public class MobState : MonoBehaviour
 	{
 		if (m_dead)
 		{
+
 			Destroy(gameObject, 1);
 			if (m_collider.enabled)
 			{
@@ -111,7 +114,15 @@ public class MobState : MonoBehaviour
 				m_dead = true;
 				// Descontamos el enemigo de la lista de enemigos de la escena
 				GameState.EnemyDead();
+				StartCoroutine("WaitAndCoin",1f);
 			}
 		}
+	}
+
+
+	IEnumerator WaitAndCoin ( float p_time )
+	{
+		yield return new WaitForSeconds(p_time);
+		Instantiate(m_coin,transform.position,transform.rotation);
 	}
 }

@@ -239,7 +239,8 @@ public class SymbolsAdapted : MonoBehaviour {
 			imagen = pGo.GetComponent<SpriteRenderer>();
 		}
 		imagen.sprite = pSprite;
-		imagen.sortingLayerName = "Background";
+		imagen.sortingLayerName = "GUI";
+		imagen.sortingOrder = 2;
 		imagen.transform.position = SymbolsAdapted.colocar8x8(pPos.x,pPos.y);
 	}
 

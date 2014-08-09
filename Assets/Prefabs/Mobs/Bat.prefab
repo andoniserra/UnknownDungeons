@@ -93,6 +93,7 @@ MonoBehaviour:
   m_beenHit: 0
   m_beenHitCooldown: 1
   m_dead: 0
+  m_coin: {fileID: 400000, guid: f4400c26c35a27247be02f2b6c240798, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
