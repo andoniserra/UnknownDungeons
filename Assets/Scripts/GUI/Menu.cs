@@ -15,8 +15,8 @@ public class Menu : MonoBehaviour {
 	private GameObject musicaNo;
 
 
-	private bool sound = true;
-	private bool music = true;
+	public bool sound = true;
+	public bool music = true;
 
 	public AudioSource selectSound;
 	public AudioSource menuMusic;
@@ -39,6 +39,8 @@ public class Menu : MonoBehaviour {
 		}
 
 	}
+
+	#region Menu Inicial
 
 	private void menu(){
 		float pulsacion = Input.GetAxis("Vertical");
@@ -105,7 +107,10 @@ public class Menu : MonoBehaviour {
 		Simbolos.colocarImagen(flecha, Simbolos.Right, new Vector2(6,14 - posFlec));
 	}
 
+	#endregion
 
+
+	#region Opciones
 	private void opciones(){
 		float pulsacion = Input.GetAxis("Vertical");
 		if(Time.time > timeUpdate){
@@ -147,10 +152,10 @@ public class Menu : MonoBehaviour {
 	}
 
 	private void pintarOpciones(){
-		Simbolos.caja(new Vector2(0,4), new Vector2(19,13));
-		Simbolos.print("music    yes  no", new Vector2(2,11));
-		Simbolos.print("sound    yes  no", new Vector2(2,9));
-		Simbolos.print("credits", new Vector2(2,7));
+		Simbolos.caja(new Vector2(0,5), new Vector2(19,14));
+		Simbolos.print("music    yes  no", new Vector2(2,12));
+		Simbolos.print("sound    yes  no", new Vector2(2,10));
+		Simbolos.print("credits", new Vector2(2,8));
 
 		sonidoSi = new GameObject();
 		musicaSi = new GameObject();
@@ -158,14 +163,14 @@ public class Menu : MonoBehaviour {
 		musicaNo = new GameObject();
 
 		if(music){
-			Simbolos.colocarImagen(musicaSi, Simbolos.Left, new Vector2(14,11));
+			Simbolos.colocarImagen(musicaSi, Simbolos.Left, new Vector2(14,12));
 		}else{
-			Simbolos.colocarImagen(musicaNo, Simbolos.Left, new Vector2(18,11));
+			Simbolos.colocarImagen(musicaNo, Simbolos.Left, new Vector2(18,12));
 		}
 		if(sound){
-			Simbolos.colocarImagen(sonidoSi, Simbolos.Left, new Vector2(14,9));
+			Simbolos.colocarImagen(sonidoSi, Simbolos.Left, new Vector2(14,10));
 		}else{
-			Simbolos.colocarImagen(sonidoNo, Simbolos.Left, new Vector2(18,9));
+			Simbolos.colocarImagen(sonidoNo, Simbolos.Left, new Vector2(18,10));
 		}
 
 	}
@@ -175,36 +180,38 @@ public class Menu : MonoBehaviour {
 			flecha = new GameObject();
 			flecha.AddComponent(typeof(SpriteRenderer));
 		}
-		Simbolos.colocarImagen(flecha, Simbolos.Right, new Vector2(1,11 - (posFlec*2)));
+		Simbolos.colocarImagen(flecha, Simbolos.Right, new Vector2(1,12 - (posFlec*2)));
 	}
-
+	
 	private void cambiarMusica(){
 		if(menuMusic.isPlaying){
 			music = false;
-			Simbolos.colocarImagen(musicaSi, Simbolos.Blank, new Vector2(14,11));
-			Simbolos.colocarImagen(musicaNo, Simbolos.Left, new Vector2(18,11));
+			Simbolos.colocarImagen(musicaSi, Simbolos.Blank, new Vector2(14,12));
+			Simbolos.colocarImagen(musicaNo, Simbolos.Left, new Vector2(18,12));
 			menuMusic.Stop();
 		}else{
 			music = true;
-			Simbolos.colocarImagen(musicaSi, Simbolos.Left, new Vector2(14,11));
-			Simbolos.colocarImagen(musicaNo, Simbolos.Blank, new Vector2(18,11));
+			Simbolos.colocarImagen(musicaSi, Simbolos.Left, new Vector2(14,12));
+			Simbolos.colocarImagen(musicaNo, Simbolos.Blank, new Vector2(18,12));
 			menuMusic.Play();
 		}
 	}
 
 	private void cambiarSonido(){
-		if(selectSound.volume == 1f){
+		if(selectSound.volume == 0.25f){
 			sound = false;
-			Simbolos.colocarImagen(sonidoSi, Simbolos.Blank, new Vector2(14,9));
-			Simbolos.colocarImagen(sonidoNo, Simbolos.Left, new Vector2(18,9));
+			Simbolos.colocarImagen(sonidoSi, Simbolos.Blank, new Vector2(14,10));
+			Simbolos.colocarImagen(sonidoNo, Simbolos.Left, new Vector2(18,10));
 			selectSound.volume = 0f;
 		}else{
 			sound = true;
-			Simbolos.colocarImagen(sonidoSi, Simbolos.Left, new Vector2(14,9));
-			Simbolos.colocarImagen(sonidoNo, Simbolos.Blank, new Vector2(18,9));
-			selectSound.volume = 1f;
+			Simbolos.colocarImagen(sonidoSi, Simbolos.Left, new Vector2(14,10));
+			Simbolos.colocarImagen(sonidoNo, Simbolos.Blank, new Vector2(18,10));
+			selectSound.volume = 0.25f;
 		}
 	}
+
+	#endregion
 
 	private void selectCredits(){
 

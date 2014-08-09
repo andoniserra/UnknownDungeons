@@ -1,125 +1,84 @@
 fileFormatVersion: 2
-guid: 94b54623c1561f841a53a70582f6a6ab
+guid: 7dba10896a5942a4b83d3a7ff85e319b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tipografia 1
-    21300002: tipografia 1_0
-    21300004: tipografia 1_1
-    21300006: tipografia 1_2
-    21300008: tipografia 1_3
-    21300010: tipografia 1_4
-    21300012: tipografia 1_5
-    21300014: tipografia 1_6
-    21300016: tipografia 1_7
-    21300018: tipografia 1_8
-    21300020: tipografia 1_9
-    21300022: tipografia 1_10
-    21300024: tipografia 1_11
-    21300026: tipografia 1_12
-    21300028: tipografia 1_13
-    21300030: tipografia 1_14
-    21300032: tipografia 1_15
-    21300034: tipografia 1_16
-    21300036: tipografia 1_17
-    21300038: tipografia 1_18
-    21300040: tipografia 1_19
-    21300042: tipografia 1_20
-    21300044: tipografia 1_21
-    21300046: tipografia 1_22
-    21300048: tipografia 1_23
-    21300050: tipografia 1_24
-    21300052: tipografia 1_25
-    21300054: tipografia 1_26
-    21300056: tipografia 1_27
-    21300058: tipografia 1_28
-    21300060: tipografia 1_29
-    21300062: tipografia 1_30
-    21300064: tipografia 1_31
-    21300066: tipografia 1_32
-    21300068: tipografia 1_33
-    21300070: tipografia 1_34
-    21300072: tipografia 1_35
-    21300074: tipografia 1_36
-    21300076: tipografia 1_37
-    21300078: tipografia 1_38
-    21300080: tipografia 1_39
-    21300082: tipografia 1_40
-    21300084: tipografia 1_41
-    21300086: tipografia 1_42
-    21300088: tipografia 1_43
-    21300090: tipografia 1_44
-    21300092: tipografia 1_45
-    21300094: tipografia 1_46
-    21300096: tipografia 1_47
-    21300098: tipografia 1_48
-    21300100: tipografia 1_49
-    21300102: tipografia 1_50
-    21300104: tipografia 1_51
-    21300106: tipografia 1_52
-    21300108: tipografia 1_53
-    21300110: tipografia 1_54
-    21300112: tipografia 1_55
-    21300114: tipografia 1_56
-    21300116: tipografia 1_57
-    21300118: tipografia_0
-    21300120: tipografia_1
-    21300122: tipografia_2
-    21300124: tipografia_3
-    21300126: tipografia_4
-    21300128: tipografia_5
-    21300130: tipografia_6
-    21300132: tipografia_7
-    21300134: tipografia_8
-    21300136: tipografia_9
-    21300138: tipografia_10
-    21300140: tipografia_11
-    21300142: tipografia_12
-    21300144: tipografia_13
-    21300146: tipografia_14
-    21300148: tipografia_15
-    21300150: tipografia_16
-    21300152: tipografia_17
-    21300154: tipografia_18
-    21300156: tipografia_19
-    21300158: tipografia_20
-    21300160: tipografia_21
-    21300162: tipografia_22
-    21300164: tipografia_23
-    21300166: tipografia_24
-    21300168: tipografia_25
-    21300170: tipografia_26
-    21300172: tipografia_27
-    21300174: tipografia_28
-    21300176: tipografia_29
-    21300178: tipografia_30
-    21300180: tipografia_31
-    21300182: tipografia_32
-    21300184: tipografia_33
-    21300186: tipografia_34
-    21300188: tipografia_35
-    21300190: tipografia_36
-    21300192: tipografia_37
-    21300194: tipografia_38
-    21300196: tipografia_39
-    21300198: tipografia_40
-    21300200: tipografia_41
-    21300202: tipografia_42
-    21300204: tipografia_43
-    21300206: tipografia_44
-    21300208: tipografia_45
-    21300210: tipografia_46
-    21300212: tipografia_47
-    21300214: tipografia_48
-    21300216: tipografia_49
-    21300218: tipografia_50
-    21300220: tipografia_51
-    21300222: tipografia_52
-    21300224: tipografia_53
-    21300226: tipografia_54
-    21300228: tipografia_55
-    21300230: tipografia_56
-    21300232: tipografia_57
-    21300234: tipografia_58
+    21300000: tipografia
+    21300002: tipografia_0
+    21300004: tipografia_1
+    21300006: tipografia_2
+    21300008: tipografia_3
+    21300010: tipografia_4
+    21300012: tipografia_5
+    21300014: tipografia_6
+    21300016: tipografia_7
+    21300018: tipografia_8
+    21300020: tipografia_9
+    21300022: tipografia_10
+    21300024: tipografia_11
+    21300026: tipografia_12
+    21300028: tipografia_13
+    21300030: tipografia_14
+    21300032: tipografia_15
+    21300034: tipografia_16
+    21300036: tipografia_17
+    21300038: tipografia_18
+    21300040: tipografia_19
+    21300042: tipografia_20
+    21300044: tipografia_21
+    21300046: tipografia_22
+    21300048: tipografia_23
+    21300050: tipografia_24
+    21300052: tipografia_25
+    21300054: tipografia_26
+    21300056: tipografia_27
+    21300058: tipografia_28
+    21300060: tipografia_29
+    21300062: tipografia_30
+    21300064: tipografia_31
+    21300066: tipografia_32
+    21300068: tipografia_33
+    21300070: tipografia_34
+    21300072: tipografia_35
+    21300074: tipografia_36
+    21300076: tipografia_37
+    21300078: tipografia_38
+    21300080: tipografia_39
+    21300082: tipografia_40
+    21300084: tipografia_41
+    21300086: tipografia_42
+    21300088: tipografia_43
+    21300090: tipografia_44
+    21300092: tipografia_45
+    21300094: tipografia_46
+    21300096: tipografia_47
+    21300098: tipografia_48
+    21300100: tipografia_49
+    21300102: tipografia_50
+    21300104: tipografia_51
+    21300106: tipografia_52
+    21300108: tipografia_53
+    21300110: tipografia_54
+    21300112: tipografia_55
+    21300114: tipografia_56
+    21300116: tipografia_57
+    21300118: tipografia_58
+    21300120: tipografia_59
+    21300122: tipografia_60
+    21300124: tipografia_61
+    21300126: tipografia_62
+    21300128: tipografia_63
+    21300130: tipografia_64
+    21300132: tipografia_65
+    21300134: tipografia_66
+    21300136: tipografia_67
+    21300138: tipografia_68
+    21300140: tipografia_69
+    21300142: tipografia_70
+    21300144: tipografia_71
+    21300146: tipografia_72
+    21300148: tipografia_73
+    21300150: tipografia_74
+    21300152: tipografia_75
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -142,7 +101,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -155,7 +114,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 8
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -168,8 +127,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_1
       rect:
@@ -178,8 +137,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_2
       rect:
@@ -188,8 +147,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_3
       rect:
@@ -198,8 +157,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_4
       rect:
@@ -208,8 +167,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_5
       rect:
@@ -218,8 +177,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_6
       rect:
@@ -228,8 +187,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_7
       rect:
@@ -238,8 +197,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_8
       rect:
@@ -248,8 +207,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_9
       rect:
@@ -258,8 +217,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_10
       rect:
@@ -268,8 +227,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_11
       rect:
@@ -278,8 +237,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_12
       rect:
@@ -288,8 +247,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_13
       rect:
@@ -298,8 +257,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_14
       rect:
@@ -308,8 +267,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_15
       rect:
@@ -318,8 +277,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_16
       rect:
@@ -328,8 +287,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_17
       rect:
@@ -338,8 +297,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_18
       rect:
@@ -348,8 +307,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_19
       rect:
@@ -358,8 +317,8 @@ TextureImporter:
         y: 136
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_20
       rect:
@@ -368,8 +327,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_21
       rect:
@@ -378,8 +337,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_22
       rect:
@@ -388,8 +347,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_23
       rect:
@@ -398,8 +357,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_24
       rect:
@@ -408,8 +367,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_25
       rect:
@@ -418,8 +377,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_26
       rect:
@@ -428,8 +387,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_27
       rect:
@@ -438,8 +397,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_28
       rect:
@@ -448,8 +407,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_29
       rect:
@@ -458,8 +417,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_30
       rect:
@@ -468,8 +427,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_31
       rect:
@@ -478,8 +437,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_32
       rect:
@@ -488,8 +447,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_33
       rect:
@@ -498,8 +457,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_34
       rect:
@@ -508,8 +467,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_35
       rect:
@@ -518,8 +477,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_36
       rect:
@@ -528,8 +487,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_37
       rect:
@@ -538,8 +497,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_38
       rect:
@@ -548,8 +507,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_39
       rect:
@@ -558,8 +517,8 @@ TextureImporter:
         y: 128
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_40
       rect:
@@ -568,8 +527,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_41
       rect:
@@ -578,8 +537,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_42
       rect:
@@ -588,8 +547,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_43
       rect:
@@ -598,8 +557,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_44
       rect:
@@ -608,8 +567,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_45
       rect:
@@ -618,8 +577,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_46
       rect:
@@ -628,8 +587,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_47
       rect:
@@ -638,8 +597,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_48
       rect:
@@ -648,8 +607,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_49
       rect:
@@ -658,8 +617,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_50
       rect:
@@ -668,8 +627,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_51
       rect:
@@ -678,8 +637,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_52
       rect:
@@ -688,8 +647,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_53
       rect:
@@ -698,8 +657,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_54
       rect:
@@ -708,8 +667,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_55
       rect:
@@ -718,8 +677,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_56
       rect:
@@ -728,8 +687,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_57
       rect:
@@ -738,8 +697,8 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_58
       rect:
@@ -748,8 +707,178 @@ TextureImporter:
         y: 120
         width: 8
         height: 8
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_59
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 120
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_61
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_62
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_63
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_64
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_65
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_66
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_67
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_68
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_69
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_70
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_71
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_72
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_73
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_74
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tipografia_75
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 112
+        width: 8
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

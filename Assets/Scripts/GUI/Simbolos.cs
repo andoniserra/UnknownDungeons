@@ -165,18 +165,6 @@ public static class Simbolos {
 	}
 
 	/// <summary>
-	/// Devuelve el vector correspondiente para las coordenadas indicadas.
-	/// Horizontalmente desde 0 a 19
-	/// Verticalmente desde 0 a 17
-	/// </summary>
-	/// <param name="posX">Posicion x.</param>
-	/// <param name="posY">Posicion y.</param>
-	private static Vector3 colocar8x8(float posX, float posY){
-		return new Vector3(-76f + (posX*8),-68 + (posY * 8));
-	}
-
-
-	/// <summary>
 	/// Dibuja una caja entre las coordenadas indicadas
 	/// </summary>
 	/// <param name="pPos1">Posicion inicia (abajo izquierda).</param>
@@ -236,9 +224,11 @@ public static class Simbolos {
 			pGo.AddComponent(typeof(SpriteRenderer));
 			imagen = pGo.GetComponent<SpriteRenderer>();
 		}
+		pGo.AddComponent(typeof(ColorChanger));
 		imagen.sprite = pSprite;
-		imagen.sortingLayerName = "Background";
-		imagen.transform.position = Simbolos.colocar8x8(pPos.x,pPos.y);
+		imagen.sortingLayerName = "GUI";
+		imagen.sortingOrder = 2;
+		imagen.transform.position = pPos;
 	}
 	
 }
