@@ -3,13 +3,6 @@ using System.Collections;
 
 public static class Mazmorras {
 	
-	/*public static void cargarSprites(){
-		
-		Sprite[] muros1 = Resources.LoadAll<Sprite>("Sprites/muros01");
-		Sprite[] muros2 = Resources.LoadAll<Sprite>("Sprites/muros02");
-		Sprite[] muros3 = Resources.LoadAll<Sprite>("Sprites/muros03");
-	}*/
-	
 	private static Vector3 colocar16x16(float posX, float posY){
 		return new Vector3((-72 + (posX*16)) * GLOBALS.UNITS_TO_PIXELS,(-48 + (posY * 16)) * GLOBALS.UNITS_TO_PIXELS);
 	}
@@ -27,12 +20,19 @@ public static class Mazmorras {
 			imagen = pGo.GetComponent<SpriteRenderer>();
 		}
 		imagen.sprite = pSprite;
-		imagen.sortingLayerName = "Background";
+		//imagen.sortingLayerName = "Background";
 		imagen.transform.position = Mazmorras.colocar16x16(pPos.x,pPos.y);
 
+		if (pGo.CompareTag ("Wall") || pGo.CompareTag ("Rock") || pGo.CompareTag("Door")) {
+					pGo.AddComponent (typeof(BoxCollider2D));
+					imagen.sortingLayerName = "Walls";
+		} else if (pGo.CompareTag ("Door")) {
+				pGo.AddComponent (typeof(Door));
+		}
+
+		pGo.AddComponent (typeof(ColorChanger));
 	}
-	
-	
+
 	
 	
 	

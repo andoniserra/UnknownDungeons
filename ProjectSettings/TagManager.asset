@@ -8,6 +8,10 @@ TagManager:
   - FilipWeapon
   - Enemy
   - Pickable
+  - Rock
+  - Wall
+  - Hole
+  - Floor
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
