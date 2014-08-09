@@ -8,6 +8,9 @@ public class MobState : MonoBehaviour
 	/// </summary>
 	public int m_hp = 10;
 
+	// Numero de monedas de recompensa
+	public int m_reward = 1;
+
 	/// <summary>
 	/// Estado que representa cuando el mob ha sido alcanzado por un arma.
 	/// </summary>
@@ -114,7 +117,10 @@ public class MobState : MonoBehaviour
 				m_dead = true;
 				// Descontamos el enemigo de la lista de enemigos de la escena
 				GameState.EnemyDead();
-				StartCoroutine("WaitAndCoin",1f);
+				for (int i = 1; i<= m_reward; i++)
+				{
+					StartCoroutine("WaitAndCoin",0.8f);
+				}
 			}
 		}
 	}
@@ -122,7 +128,16 @@ public class MobState : MonoBehaviour
 
 	IEnumerator WaitAndCoin ( float p_time )
 	{
-		yield return new WaitForSeconds(p_time);
-		Instantiate(m_coin,transform.position,transform.rotation);
+		float randomOffsetTime = Random.Range(0f,0.2f);
+		yield return new WaitForSeconds(p_time + randomOffsetTime);
+		float sizeX = m_collider.size.x / 2;
+		float sizeY = m_collider.size.y / 2;
+		float randomOffsetX = Random.Range(-sizeX,sizeX);
+		float randomOffsetY = Random.Range(-sizeY,sizeY);
+		Vector3 coinPosition = new Vector3 (
+			transform.position.x + randomOffsetX,
+			transform.position.y + randomOffsetY,
+			0);
+		Instantiate(m_coin,coinPosition,transform.rotation);
 	}
 }
