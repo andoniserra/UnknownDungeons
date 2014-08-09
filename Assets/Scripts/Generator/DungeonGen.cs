@@ -6,6 +6,7 @@ public class DungeonGen : MonoBehaviour {
 	Sprite[] muros1;
 	Sprite[] suelo1;
 	GameObject[,] sala = new GameObject[10,8];
+	public Transform filip;
 	
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,7 @@ public class DungeonGen : MonoBehaviour {
 		}
 		muros1 = Resources.LoadAll<Sprite>("Tiles/muros01");
 		suelo1 = Resources.LoadAll<Sprite>("Tiles/suelos01");
+		Instantiate (filip);
 		generarEsquinas();
 		generarMuros ();
 		generarPuertas ();
@@ -127,9 +129,9 @@ public class DungeonGen : MonoBehaviour {
 
 			if (!((sala[xRoca+1, yRoca].CompareTag("Door")) || (sala[xRoca, yRoca+1].CompareTag("Door")) || (sala[xRoca-1, yRoca].CompareTag("Door")) || (sala[xRoca, yRoca-1].CompareTag("Door")) )){
 					GameObject rock =  sala[xRoca,yRoca];
-					Mazmorras.colocarImagen(rock, suelo1[2], new Vector2(xRoca,yRoca));
 					rock.name = "Rock";
 					rock.tag = "Rock";
+					Mazmorras.colocarImagen(rock, suelo1[2], new Vector2(xRoca,yRoca));
 					numRocas = numRocas -1;
 			}
 		}
@@ -137,7 +139,7 @@ public class DungeonGen : MonoBehaviour {
 
 	//Agujeros
 	private void generarAgujeros(){
-		int numHole = Mathf.RoundToInt(Random.Range (0, 1));
+		int numHole = Mathf.RoundToInt(Random.Range (0, 2));
 
 		while (numHole != 0) {
 			int xHole = Mathf.RoundToInt(Random.Range (1, 8));
@@ -147,11 +149,11 @@ public class DungeonGen : MonoBehaviour {
 				if (!sala[xHole+2, yHole].CompareTag("Door")){
 					GameObject hole =  sala[xHole,yHole];
 					GameObject hole2 =  sala[xHole+1,yHole];
-					Mazmorras.colocarImagen(hole, suelo1[0], new Vector2(xHole,yHole));
-					Mazmorras.colocarImagen(hole2, suelo1[1], new Vector2(xHole+1,yHole));
 					hole.name = "Hole";
 					hole.tag = "Hole";
 					hole2.tag = "Hole";
+					Mazmorras.colocarImagen(hole, suelo1[0], new Vector2(xHole,yHole));
+					Mazmorras.colocarImagen(hole2, suelo1[1], new Vector2(xHole+1,yHole));
 					numHole = numHole -1;
 				}
 			}
