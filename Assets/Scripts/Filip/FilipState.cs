@@ -9,7 +9,8 @@ public class FilipState : MonoBehaviour
 	public bool m_move = true;
 
 	// Vida de Filip
-	public int m_hp = 5;
+	public int m_fullHP = 3; 	//Numero de corazones
+	public int m_hp = 3;		//Vida
 
 	// Dinero de Filip
 	public int m_coins = 0;

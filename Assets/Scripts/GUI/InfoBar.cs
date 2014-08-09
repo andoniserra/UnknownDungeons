@@ -16,6 +16,8 @@ public class InfoBar : MonoBehaviour {
 
 	private GameObject Level;
 
+	private GameObject[] Life;
+
 
 	// Use this for initialization
 	void Start () {
@@ -38,8 +40,12 @@ public class InfoBar : MonoBehaviour {
 
 		#endregion
 
+		#region Nivel
 		//Indicador de habitacion
+		//TODO: cuando este terminado el generador de mazmorras
+		#endregion
 
+		#region monedas
 		//Indicador de monedas
 		CoinsU = new GameObject();
 		CoinsU.AddComponent(typeof(SpriteRenderer));
@@ -47,25 +53,28 @@ public class InfoBar : MonoBehaviour {
 		CoinsD.AddComponent(typeof(SpriteRenderer));
 		CoinsC = new GameObject();
 		CoinsC.AddComponent(typeof(SpriteRenderer));
+		#endregion
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		//Espada -3, -7.5
+		//Vida
+
+		//Espada
 		SwordLvl.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + FilipState.myFilip.m_swordLvl];
 		Simbolos.colocarImagen(SwordLvl, SwordLvl.GetComponent<SpriteRenderer>().sprite, new Vector2(-3f, -7.5f), "GUI", 3);
 
-		//arco -1.75, -7.5
+		//arco
 		Bowlvl.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + FilipState.myFilip.m_arrowLvl];
 		Simbolos.colocarImagen(Bowlvl, Bowlvl.GetComponent<SpriteRenderer>().sprite, new Vector2(-1.75f, -7.5f), "GUI", 3);
 
-		//Magia -0.3, -7.5
+		//Magia
 		Magiclvl.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + FilipState.myFilip.m_magicLvl];
 		Simbolos.colocarImagen(Magiclvl, Magiclvl.GetComponent<SpriteRenderer>().sprite, new Vector2(-0.3f, -7.5f), "GUI", 3);
 
-		//Escudo 1.45, -7.5
+		//Escudo
 		Shieldlvl.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + FilipState.myFilip.m_shieldLvl];
 		Simbolos.colocarImagen(Shieldlvl, Shieldlvl.GetComponent<SpriteRenderer>().sprite, new Vector2(1.45f, -7.5f), "GUI", 3);
 
@@ -84,12 +93,7 @@ public class InfoBar : MonoBehaviour {
 		CoinsU.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + udds];
 		Simbolos.colocarImagen(CoinsU, CoinsU.GetComponent<SpriteRenderer>().sprite, new Vector2(5.4f, -7.5f), "GUI", 3);
 
-		/*
-		//TODO: mostrar bien las monedas
 
-		Level.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + FilipState.myFilip.m_coins];
-		Simbolos.colocarImagen(SwordLvl, SwordLvl.GetComponent<SpriteRenderer>().sprite, new Vector2(-3, -7.5f), "GUI", 3);
-		*/
 	}
 
 }

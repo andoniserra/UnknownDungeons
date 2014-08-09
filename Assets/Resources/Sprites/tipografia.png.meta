@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7dba10896a5942a4b83d3a7ff85e319b
+guid: a323ec575a72080439b2a324e5fcca85
 TextureImporter:
   fileIDToRecycleName:
     21300000: tipografia
@@ -111,7 +111,7 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 1
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 8
@@ -128,7 +128,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 1
-      pivot: {x: 0, y: 1}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: tipografia_1
       rect:

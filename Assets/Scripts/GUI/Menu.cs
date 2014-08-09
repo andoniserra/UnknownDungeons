@@ -14,6 +14,7 @@ public class Menu : MonoBehaviour {
 	private GameObject sonidoNo;
 	private GameObject musicaNo;
 
+	private GameObject creditImage;
 
 	public bool sound = true;
 	public bool music = true;
@@ -25,6 +26,16 @@ public class Menu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//Imagen de los creditos
+		creditImage = new GameObject();
+		creditImage.AddComponent<SpriteRenderer>();
+		creditImage.transform.position = new Vector2(0,0);
+		//Creamos el sprite
+		SpriteRenderer creditos = creditImage.GetComponent<SpriteRenderer>();
+		creditos.sprite = Resources.Load<Sprite>("Sprites/creditos");
+		creditos.sortingLayerName = "GUI";
+		creditos.sortingOrder = 2;
+
 		pintarMenu();
 	}
 
@@ -35,6 +46,7 @@ public class Menu : MonoBehaviour {
 			case 0: menu (); break;
 			case 1: opciones(); break;
 			case 2: halp(); break;
+			case 3: selectCredits(); break;
 			default: playerPos = 0; break;
 		}
 
@@ -131,7 +143,7 @@ public class Menu : MonoBehaviour {
 				switch(posFlec){
 				case 0: cambiarMusica();break;
 				case 1: cambiarSonido();break;
-				case 2: break;
+				case 2: creditos(); break;
 				}
 				selectSound.Play ();
 			}
@@ -213,11 +225,32 @@ public class Menu : MonoBehaviour {
 
 	#endregion
 
-	private void selectCredits(){
-
+	private void creditos(){
+		GameObject[] go = GameObject.FindGameObjectsWithTag("TempTile");
+		
+		foreach(GameObject GoAct in go){
+			Destroy(GoAct);
+		}
+		playerPos = 3;
 	}
 
+	private void selectCredits(){
+		bool mostrados = false;
+		creditImage.transform.position = creditImage.transform.position + new Vector3(0, 1 * Time.deltaTime * 4,0);
+		
+		if(creditImage.transform.position.y > 45){
+			posFlec = 0;
+			playerPos = 1;
+			pintarOpciones();
+		}
+	}
+	
+
 	private void halp(){
+
+		if (Input.GetButtonDown("Attack")){
+
+		}
 
 		if (Input.GetButtonDown("Defend")){
 			
