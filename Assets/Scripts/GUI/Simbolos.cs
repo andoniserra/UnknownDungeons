@@ -218,16 +218,20 @@ public static class Simbolos {
 	/// <param name="pSprite">Sprite.</param>
 	/// <param name="pPos">P position.</param>
 	public static void colocarImagen(GameObject pGo, Sprite pSprite, Vector2 pPos){
+		colocarImagen(pGo,pSprite,pPos,"GUI",2);
+	}
+
+	public static void colocarImagen(GameObject pGo, Sprite pSprite, Vector2 pPos, string pNombreCapa, int pCapa){
 		SpriteRenderer imagen = pGo.GetComponent<SpriteRenderer>();
 		pGo.tag = "TempTile";
 		if (imagen == null){
 			pGo.AddComponent(typeof(SpriteRenderer));
 			imagen = pGo.GetComponent<SpriteRenderer>();
 		}
-		pGo.AddComponent(typeof(ColorChanger));
+		//pGo.AddComponent(typeof(ColorChanger));
 		imagen.sprite = pSprite;
-		imagen.sortingLayerName = "GUI";
-		imagen.sortingOrder = 2;
+		imagen.sortingLayerName = pNombreCapa;
+		imagen.sortingOrder = pCapa;
 		imagen.transform.position = pPos;
 	}
 	

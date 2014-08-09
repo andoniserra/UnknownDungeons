@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 31dcff0293d07154a809d7ff99298008
+guid: cc95e45147f23b6448060e934dbde0b5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: TestBackground
-    21300002: GuiBar
+    21300000: GUIBack
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,8 +22,8 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -3
-  maxTextureSize: 256
+  textureFormat: -1
+  maxTextureSize: 1024
   textureSettings:
     filterMode: 0
     aniso: 1
@@ -36,7 +35,7 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 1
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 8

@@ -22,13 +22,16 @@ public class FilipState : MonoBehaviour
 	public int m_equippedWeapon = 0;
 	
 	// Prefabs de las armas
-	// TODO: ¡¡¡¡¡¡¡¡FALTA MAGIA!!!!!!!!!
 	public Transform m_arrow;
 	public float m_arrowStart = 8f;
+	public int m_arrowLvl = 1;
 	public Transform m_swordSwing;
 	public float m_swordRange = 18f;
+	public int m_swordLvl = 1;
 	public Transform m_magicBall;
 	public float m_magicBallRange = 24f;
+	public int m_magicLvl = 1;
+	public int m_shieldLvl = 1;
 
 	/******************************
 	 *    Estados de Filip
