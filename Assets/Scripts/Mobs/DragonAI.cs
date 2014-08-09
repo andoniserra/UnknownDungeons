@@ -6,12 +6,16 @@ public enum DragonAction
 	Wait,
 	Fly,
 	SpitFire,
-	Flamethrower
+	Flamethrower,
+	Fall,
+	Grounded,
+	Rise
 }
 
 
 public class DragonAI : MonoBehaviour 
 {
+	public int m_flamethrowerShoots = 7;
 	public float m_travelLength = 48f;
 	public float m_maxLeftPosition = 0;
 	public float m_maxRightPosition = 0;
@@ -19,11 +23,14 @@ public class DragonAI : MonoBehaviour
 	public bool m_maxRightReached = false;
 
 	// Tiempo en segundos entre las acciones
-	public float m_cooldown = 1f;
+	public float m_cooldown = 0.5f;
 	private float m_defaultCooldown;
 	
-	public float m_flyCooldown = 1f;
+	public float m_flyCooldown = 0.5f;
 	private float m_defaultFlyCooldown;
+
+	public float m_groundedCooldown = 4f;
+	private float m_defaultGroundedCooldown;
 	
 	
 	public DragonAction m_action = DragonAction.Wait;
@@ -46,6 +53,7 @@ public class DragonAI : MonoBehaviour
 		print (m_maxRightPosition);
 		m_defaultCooldown = m_cooldown;
 		m_defaultFlyCooldown = m_flyCooldown;
+		m_defaultGroundedCooldown = m_groundedCooldown;
 		m_movement = GetComponent<Movement>();
 		m_mobState = GetComponent<MobState>();
 	}
@@ -53,22 +61,23 @@ public class DragonAI : MonoBehaviour
 	
 	void Update () 
 	{
-		if (Clock())
+		if (Clock() && m_action != DragonAction.Grounded)
 		{
 			// Si nos han dado, no calculamos otro movimiento, 
 			// esperamos siguiente turno
-			if (!m_mobState.m_beenHit && !m_mobState.m_dead)
+			if (!m_mobState.m_beenHit && !m_mobState.m_dead &&
+			    m_action != DragonAction.Fall && m_action != DragonAction.Rise)
 			{
 				DecideAction();
 			}
-			else
+			else if (m_action != DragonAction.Fall && m_action != DragonAction.Rise)
 			{
 				m_action = DragonAction.Wait;
 			}
 			
 		}
 		
-		if (m_action == DragonAction.Fly)
+		if (m_action == DragonAction.Fly || m_action == DragonAction.SpitFire)
 		{
 			if (FlyClock())
 			{
@@ -77,6 +86,38 @@ public class DragonAI : MonoBehaviour
 			else
 			{
 				Fly(m_flyDirection);
+			}
+		}
+
+		if (m_action == DragonAction.Fall)
+		{
+			if (FlyClock())
+			{
+				m_action = DragonAction.Grounded;
+			}
+			else
+			{
+				Fly(GLOBALS.Direction.South);
+			}
+		}
+
+		if (m_action == DragonAction.Rise)
+		{
+			if (FlyClock())
+			{
+				m_action = DragonAction.Wait;
+			}
+			else
+			{
+				Fly(GLOBALS.Direction.North);
+			}
+		}
+
+		if (m_action == DragonAction.Grounded)
+		{
+			if (GroundedClock())
+			{
+				Rise ();
 			}
 		}
 	}
@@ -110,11 +151,26 @@ public class DragonAI : MonoBehaviour
 			return false;
 		}
 	}
+
+
+	private bool GroundedClock()
+	{
+		m_groundedCooldown -= Time.deltaTime;
+		if (m_groundedCooldown <= 0f)
+		{
+			m_groundedCooldown = m_defaultGroundedCooldown;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 	
 	
 	private void DecideAction ()
 	{
-		int randomAction = Random.Range(0,2);
+		int randomAction = Random.Range(0,3);
 		switch (randomAction)
 		{
 		/*case 0:
@@ -126,6 +182,9 @@ public class DragonAI : MonoBehaviour
 			break;
 		case 1:
 			m_action = DragonAction.SpitFire;
+			break;
+		case 2:
+			m_action = DragonAction.Flamethrower;
 			break;
 		default:
 			m_action = DragonAction.Fly;
@@ -139,6 +198,10 @@ public class DragonAI : MonoBehaviour
 		if (m_action == DragonAction.SpitFire)
 		{
 			SpitFire();
+		}
+		if (m_action == DragonAction.Flamethrower)
+		{
+			ShootFlamethrower();
 		}
 	}
 	
@@ -221,5 +284,40 @@ public class DragonAI : MonoBehaviour
 			transform.position.x,
 			transform.position.y - (GLOBALS.UNITS_TO_PIXELS * 16));
 		Instantiate(m_fireBall, pos, transform.rotation);
+	}
+
+
+	private void ShootFlamethrower ()
+	{
+		Vector3 pos = new Vector3(
+			transform.position.x,
+			transform.position.y - (GLOBALS.UNITS_TO_PIXELS * 16));
+		for (int i = 1; i<= m_flamethrowerShoots; i++)
+		{
+			StartCoroutine("WaitAndFlame", pos);
+		}
+	}
+
+
+	public void Fall()
+	{
+		m_action = DragonAction.Fall;
+	}
+
+	public void Rise()
+	{
+		m_action = DragonAction.Rise;
+		m_mobState.Rise();
+	}
+
+
+	IEnumerator WaitAndFlame ( Vector3 p_position )
+	{
+		float randomOffsetTime = Random.Range(0f, m_defaultCooldown);
+		yield return new WaitForSeconds(randomOffsetTime);
+		Transform fireball = Instantiate(m_fireBall, p_position, transform.rotation) as Transform;
+		float rotation = Random.Range (-45f, 45f);
+		fireball.GetComponent<FireBall>().m_leavesFlame=false;
+		fireball.transform.Rotate(Vector3.forward * rotation);
 	}
 }

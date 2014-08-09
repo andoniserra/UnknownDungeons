@@ -575,8 +575,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 10
+  m_reward: 1
+  m_canFly: 0
+  m_hitsToFall: 2
   m_beenHit: 0
   m_beenHitCooldown: 1
+  m_isFlying: 0
   m_dead: 0
   m_coin: {fileID: 400000, guid: f4400c26c35a27247be02f2b6c240798, type: 2}
 --- !u!95 &110850054
@@ -1644,7 +1648,7 @@ GameObject:
   - 114: {fileID: 236522966}
   m_Layer: 0
   m_Name: Filip
-  m_TagString: Untagged
+  m_TagString: Filip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3302,62 +3306,6 @@ Prefab:
   m_RootGameObject: {fileID: 2041437178}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1001 &512866138
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_sceneColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_sceneColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-      propertyPath: m_sceneColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-  m_RootGameObject: {fileID: 1265115649}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1001 &522158193
 Prefab:
   m_ObjectHideFlags: 0
@@ -4393,8 +4341,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 10
+  m_reward: 1
+  m_canFly: 0
+  m_hitsToFall: 2
   m_beenHit: 0
   m_beenHitCooldown: 1
+  m_isFlying: 0
   m_dead: 0
   m_coin: {fileID: 400000, guid: f4400c26c35a27247be02f2b6c240798, type: 2}
 --- !u!95 &636925470
@@ -8139,7 +8091,7 @@ Prefab:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-  m_PrefabInternal: {fileID: 512866138}
+  m_PrefabInternal: {fileID: 1387879256}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1265115651}
@@ -8157,7 +8109,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: dba61a275f0d40d44aba30c8a5701c84,
     type: 2}
-  m_PrefabInternal: {fileID: 512866138}
+  m_PrefabInternal: {fileID: 1387879256}
   m_GameObject: {fileID: 1265115649}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -8175,7 +8127,7 @@ MonoBehaviour:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
-  m_PrefabInternal: {fileID: 512866138}
+  m_PrefabInternal: {fileID: 1387879256}
   m_GameObject: {fileID: 1265115649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -8188,7 +8140,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400002, guid: dba61a275f0d40d44aba30c8a5701c84,
     type: 2}
-  m_PrefabInternal: {fileID: 512866138}
+  m_PrefabInternal: {fileID: 1387879256}
   m_GameObject: {fileID: 1265115649}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -8408,8 +8360,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 10
+  m_reward: 1
+  m_canFly: 0
+  m_hitsToFall: 2
   m_beenHit: 0
   m_beenHitCooldown: 1
+  m_isFlying: 0
   m_dead: 0
   m_coin: {fileID: 400000, guid: f4400c26c35a27247be02f2b6c240798, type: 2}
 --- !u!95 &1274497789
@@ -9071,6 +9027,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4592b4b6d59c4a747b4da785e11081ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1387879256
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dba61a275f0d40d44aba30c8a5701c84, type: 2}
+  m_RootGameObject: {fileID: 1265115649}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &1429356439
 Prefab:
   m_ObjectHideFlags: 0
@@ -9405,8 +9405,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 10
+  m_reward: 1
+  m_canFly: 0
+  m_hitsToFall: 2
   m_beenHit: 0
   m_beenHitCooldown: 1
+  m_isFlying: 0
   m_dead: 0
   m_coin: {fileID: 400000, guid: f4400c26c35a27247be02f2b6c240798, type: 2}
 --- !u!95 &1452037121

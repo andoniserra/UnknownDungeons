@@ -8,6 +8,8 @@ public class Flame : MonoBehaviour
 	
 	public float m_lifeSpan1 = 0.2f;
 	public float m_lifeSpan2 = 1.5f;
+
+	public bool m_eternalFlames = false;
 	
 	private float timePassed = 0f;
 	public Sprite m_sprite1 = null;
@@ -28,8 +30,10 @@ public class Flame : MonoBehaviour
 		m_collider = GetComponent<CircleCollider2D>();
 		m_renderer = GetComponent<SpriteRenderer>();
 		m_renderer.sprite = m_sprite1;
-		
-		Destroy(gameObject, m_lifeSpan2);
+		if (!m_eternalFlames)
+		{
+			Destroy(gameObject, m_lifeSpan2);
+		}
 	}
 	
 
@@ -42,6 +46,19 @@ public class Flame : MonoBehaviour
 			m_state = 2;
 			m_renderer.sprite = m_sprite2;
 			m_collider.enabled = true;
+		}
+		if (m_eternalFlames && timePassed >= m_lifeSpan2 && m_state ==2)
+		{
+			m_state = 1;
+			m_renderer.sprite = m_sprite1;
+			m_collider.enabled = false;
+			timePassed = 0f;
+			m_lifeSpan1 = Random.Range(0.1f, 1f);
+			m_lifeSpan2 = Random.Range(3f, 5f);
+		}
+		if (GameState.myGameState.m_enemyCount <= 0)
+		{
+			Destroy(gameObject, 1f);
 		}
 	}
 	

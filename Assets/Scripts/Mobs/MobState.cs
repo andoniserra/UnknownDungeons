@@ -11,12 +11,18 @@ public class MobState : MonoBehaviour
 	// Numero de monedas de recompensa
 	public int m_reward = 1;
 
+	public bool m_canFly = false;
+	public int m_hitsToFall = 2;
+	private int m_defaulHitsToFall = 2;
+
 	/// <summary>
 	/// Estado que representa cuando el mob ha sido alcanzado por un arma.
 	/// </summary>
 	public bool m_beenHit = false;
 	public float m_beenHitCooldown = 1f;
 	private float m_beenHitDefaultCooldown;
+
+	public bool m_isFlying = false;
 
 	/// <summary>
 	/// Si el mob esta muerto.
@@ -30,11 +36,18 @@ public class MobState : MonoBehaviour
 	// Referencia al animator para desencadenar las animaciones
 	private Animator m_animator;
 
+	private DragonAI m_dragonAI;
+
 	void Awake () 
 	{
 		m_beenHitDefaultCooldown = m_beenHitCooldown;
+		m_defaulHitsToFall = m_hitsToFall;
 		m_collider = GetComponent<BoxCollider2D>();
-		m_animator = GetComponentInChildren<Animator>();
+		m_animator = GetComponent<Animator>();
+		if (m_canFly)
+		{
+			m_dragonAI = GetComponent<DragonAI>();
+		}
 	}
 	
 
@@ -59,6 +72,23 @@ public class MobState : MonoBehaviour
 				m_beenHit = false;
 			}
 		}
+
+		if (m_canFly && m_isFlying && m_hitsToFall <= 0)
+		{
+			m_dragonAI.Fall();
+			m_animator.SetBool("grounded", true);
+			m_animator.SetTrigger("fall");
+			m_isFlying = false;
+			m_hitsToFall = m_defaulHitsToFall;
+		}
+	}
+
+
+	public void Rise()
+	{
+		m_animator.SetBool("grounded", false);
+		m_animator.SetTrigger("rise");
+		m_isFlying = true;
 	}
 
 
@@ -109,6 +139,10 @@ public class MobState : MonoBehaviour
 		{
 			m_hp -= p_damage;
 			m_beenHit = true;
+			if (m_canFly && m_isFlying)
+			{
+				m_hitsToFall -= 1;
+			}
 			// Reproducir sonido mob herido
 			SoundHelper.PlayMobHit();
 			m_animator.SetTrigger("herido");

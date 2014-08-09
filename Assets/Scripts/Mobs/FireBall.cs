@@ -5,6 +5,7 @@ public class FireBall : MonoBehaviour {
 
 	public int m_damage = 4;
 	public float m_projectileLifeSpan = 3f;
+	public bool m_leavesFlame = true;
 	public Transform m_flame;
 	
 	
@@ -26,7 +27,10 @@ public class FireBall : MonoBehaviour {
 		if (p_collider.gameObject.tag == "Filip")
 		{
 			p_collider.gameObject.SendMessage( "ApplyDamage", m_damage );
-			LeaveFlame();
+			if (m_leavesFlame)
+			{
+				LeaveFlame();
+			}
 			Destroy(this.gameObject);
 		}
 	}
@@ -37,7 +41,10 @@ public class FireBall : MonoBehaviour {
 		print ("Collision!");
 		if (p_collision.gameObject.layer == LayerMask.NameToLayer("Walls"))
 		{
-			LeaveFlame();
+			if (m_leavesFlame)
+			{
+				LeaveFlame();
+			}
 			print ("Pared!");
 			Destroy(this.gameObject);
 		}
