@@ -169,6 +169,7 @@ public class FilipState : MonoBehaviour
 		{
 			myFilip.m_coins += 1;
 			Destroy(p_collider.gameObject);
+			SoundHelper.PlayPickCoin();
 		}
 	}
 

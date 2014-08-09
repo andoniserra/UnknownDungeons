@@ -90,7 +90,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Size: {x: 1, y: 1.5}
-  m_Center: {x: 0, y: -.25}
+  m_Center: {x: 0, y: -.75}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -207,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_move: 1
   m_hp: 5
+  m_coins: 0
   m_equippedWeapon: 0
   m_arrow: {fileID: 400000, guid: 40e398625bdee1c44aaf0eedfa5692d8, type: 2}
   m_arrowStart: 8
