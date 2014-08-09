@@ -1,17 +1,17 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public static class Mazmorras {
 	
-	public static void cargarSprites(){
+	/*public static void cargarSprites(){
 		
 		Sprite[] muros1 = Resources.LoadAll<Sprite>("Sprites/muros01");
 		Sprite[] muros2 = Resources.LoadAll<Sprite>("Sprites/muros02");
 		Sprite[] muros3 = Resources.LoadAll<Sprite>("Sprites/muros03");
-	}
+	}*/
 	
 	private static Vector3 colocar16x16(float posX, float posY){
-		return new Vector3(-72 + (posX*16),-48 + (posY * 16));  //antes era 64
+		return new Vector3((-72 + (posX*16)) * GLOBALS.UNITS_TO_PIXELS,(-48 + (posY * 16)) * GLOBALS.UNITS_TO_PIXELS);
 	}
 	
 	/// <summary>
@@ -28,7 +28,8 @@ public static class Mazmorras {
 		}
 		imagen.sprite = pSprite;
 		imagen.sortingLayerName = "Background";
-		//imagen.transform.position = Mazmorras.colocar16x16(pPos.x,pPos.y);
+		imagen.transform.position = Mazmorras.colocar16x16(pPos.x,pPos.y);
+
 	}
 	
 	
