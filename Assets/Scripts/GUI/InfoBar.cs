@@ -41,6 +41,13 @@ public class InfoBar : MonoBehaviour {
 		//Indicador de habitacion
 
 		//Indicador de monedas
+		CoinsU = new GameObject();
+		CoinsU.AddComponent(typeof(SpriteRenderer));
+		CoinsD = new GameObject();
+		CoinsD.AddComponent(typeof(SpriteRenderer));
+		CoinsC = new GameObject();
+		CoinsC.AddComponent(typeof(SpriteRenderer));
+
 	}
 	
 	// Update is called once per frame
@@ -62,18 +69,23 @@ public class InfoBar : MonoBehaviour {
 		Shieldlvl.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + FilipState.myFilip.m_shieldLvl];
 		Simbolos.colocarImagen(Shieldlvl, Shieldlvl.GetComponent<SpriteRenderer>().sprite, new Vector2(1.45f, -7.5f), "GUI", 3);
 
+		//Monedas
 		int udds, dcns, cnts;
 		udds = (FilipState.myFilip.m_coins % 100) % 10;
 		dcns = (FilipState.myFilip.m_coins / 10) % 10;
 		cnts = FilipState.myFilip.m_coins / 100;
-
+		//Centenas
+		CoinsC.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + cnts];
+		Simbolos.colocarImagen(CoinsC, CoinsC.GetComponent<SpriteRenderer>().sprite, new Vector2(4.4f, -7.5f), "GUI", 3);
+		//Decenas
+		CoinsD.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + dcns];
+		Simbolos.colocarImagen(CoinsD, CoinsD.GetComponent<SpriteRenderer>().sprite, new Vector2(4.9f, -7.5f), "GUI", 3);
+		//Unidades
+		CoinsU.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + udds];
+		Simbolos.colocarImagen(CoinsU, CoinsU.GetComponent<SpriteRenderer>().sprite, new Vector2(5.4f, -7.5f), "GUI", 3);
 
 		/*
 		//TODO: mostrar bien las monedas
-
-		Coins.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + FilipState.myFilip.m_swordLvl];
-		Simbolos.colocarImagen(SwordLvl, SwordLvl.GetComponent<SpriteRenderer>().sprite, new Vector2(-3, -7.5f), "GUI", 3);
-
 
 		Level.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + FilipState.myFilip.m_coins];
 		Simbolos.colocarImagen(SwordLvl, SwordLvl.GetComponent<SpriteRenderer>().sprite, new Vector2(-3, -7.5f), "GUI", 3);
