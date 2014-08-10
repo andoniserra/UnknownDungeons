@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: f76ee45a95a2d0143b27bc928743729a
+guid: 0511235ba79eb0746adccfd926039c55
 TextureImporter:
   fileIDToRecycleName:
-    21300000: magia3
+    21300000: dragon3
+    21300002: Dragon_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,12 +24,12 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -3
-  maxTextureSize: 32
+  maxTextureSize: 64
   textureSettings:
     filterMode: 0
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

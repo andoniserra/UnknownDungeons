@@ -109,5 +109,14 @@ public class GameState : MonoBehaviour
 			// Recolocamos a Filip
 			SpawnSpot.SpawnFilip(myGameState.m_lastDoorDirection);
 		}
+
+		if (Application.loadedLevelName == "TestDragon")
+		{
+			SpriteColorSelector.SetSceneColor(3);
+		}
+		else
+		{
+			SpriteColorSelector.SetSceneColor(1);
+		}
 	}
 }

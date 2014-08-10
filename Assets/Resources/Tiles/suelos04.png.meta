@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: f76ee45a95a2d0143b27bc928743729a
+guid: 421ca1908266e7148a53532c5718ec9c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: magia3
+    21300000: suelos04
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,7 +23,7 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -3
-  maxTextureSize: 32
+  maxTextureSize: 64
   textureSettings:
     filterMode: 0
     aniso: -1
