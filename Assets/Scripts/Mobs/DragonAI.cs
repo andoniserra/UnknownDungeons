@@ -15,7 +15,7 @@ public enum DragonAction
 
 public class DragonAI : MonoBehaviour 
 {
-	public int m_flamethrowerShoots = 7;
+	public int m_flamethrowerShoots = 4;
 	public float m_travelLength = 48f;
 	public float m_maxLeftPosition = 0;
 	public float m_maxRightPosition = 0;
@@ -29,7 +29,7 @@ public class DragonAI : MonoBehaviour
 	public float m_flyCooldown = 0.5f;
 	private float m_defaultFlyCooldown;
 
-	public float m_groundedCooldown = 4f;
+	public float m_groundedCooldown = 3f;
 	private float m_defaultGroundedCooldown;
 	
 	
@@ -317,7 +317,7 @@ public class DragonAI : MonoBehaviour
 		yield return new WaitForSeconds(randomOffsetTime);
 		Transform fireball = Instantiate(m_fireBall, p_position, transform.rotation) as Transform;
 		float rotation = Random.Range (-45f, 45f);
-		fireball.GetComponent<FireBall>().m_leavesFlame=false;
+		//fireball.GetComponent<FireBall>().m_leavesFlame=false;
 		fireball.transform.Rotate(Vector3.forward * rotation);
 	}
 }

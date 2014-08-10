@@ -94,7 +94,22 @@ public class GameState : MonoBehaviour
 	{
 		//print ("LoadScene");
 		myGameState.m_lastDoorDirection = p_doorDirection;
-		Application.LoadLevel(p_scene);
+		if (p_scene == "Random")
+		{
+			int randomInt = Random.Range(0,2);
+			if (randomInt == 0)
+			{
+				Application.LoadLevel("TestSlime");
+			}
+			else
+			{
+				Application.LoadLevel("TestBat");
+			}
+		}
+		else
+		{
+			Application.LoadLevel(p_scene);
+		}
 	}
 
 

@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676bceadaaea55145a000df5ac27d3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cooldown: 3
+  m_cooldown: 2
   m_jumpCooldown: 1
   m_action: 0
   m_jumpDirection: 0
@@ -195,8 +195,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 10
+  m_reward: 1
+  m_canFly: 0
+  m_hitsToFall: 2
   m_beenHit: 0
   m_beenHitCooldown: 1
+  m_isFlying: 0
   m_dead: 0
   m_coin: {fileID: 400000, guid: f4400c26c35a27247be02f2b6c240798, type: 2}
 --- !u!212 &21200000

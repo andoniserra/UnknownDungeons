@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f647d9686f2b2843801265272624f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_flamethrowerShoots: 5
+  m_flamethrowerShoots: 4
   m_travelLength: 48
   m_maxLeftPosition: 0
   m_maxRightPosition: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_maxRightReached: 0
   m_cooldown: .5
   m_flyCooldown: .5
-  m_groundedCooldown: 5
+  m_groundedCooldown: 3
   m_action: 0
   m_flyDirection: 3
   m_fireBall: {fileID: 400000, guid: 94d91561665cc33498695b31652841df, type: 2}
