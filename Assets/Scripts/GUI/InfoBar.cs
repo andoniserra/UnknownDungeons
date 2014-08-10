@@ -141,7 +141,7 @@ public class InfoBar : MonoBehaviour {
 			ht.sortingLayerName = "GUI";
 			ht.sortingOrder = 3;
 			hearts[cor].transform.position = new Vector3(-9.6f + cor, -7.6f,0);
-			Debug.Log(FilipState.myFilip.m_hp);
+			//Debug.Log(FilipState.myFilip.m_hp);
 			if(cor < vida){
 				ht.sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[42];
 			}else{

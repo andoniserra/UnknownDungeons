@@ -48,9 +48,9 @@ public class DragonAI : MonoBehaviour
 	void Start () 
 	{
 		m_maxLeftPosition = transform.position.x - (m_travelLength * GLOBALS.UNITS_TO_PIXELS);
-		print (m_maxLeftPosition);
+		//print (m_maxLeftPosition);
 		m_maxRightPosition = transform.position.x + (m_travelLength * GLOBALS.UNITS_TO_PIXELS);
-		print (m_maxRightPosition);
+		//print (m_maxRightPosition);
 		m_defaultCooldown = m_cooldown;
 		m_defaultFlyCooldown = m_flyCooldown;
 		m_defaultGroundedCooldown = m_groundedCooldown;

@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.8297863, y: -3.13363409, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,6 +73,7 @@ MonoBehaviour:
   m_damage: 1
   m_lifeSpan1: .200000003
   m_lifeSpan2: .600000024
+  m_eternalFlames: 0
   m_sprite1: {fileID: 21300002, guid: f7fe4c8eeecf0414eb9aeb69c3fdf6a4, type: 3}
   m_sprite2: {fileID: 21300002, guid: 3b9d15cb5eb207344a8c239d9378f726, type: 3}
 --- !u!114 &11400002

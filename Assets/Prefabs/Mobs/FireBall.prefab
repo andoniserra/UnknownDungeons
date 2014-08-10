@@ -30,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.1660576, y: -8.09087181, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_damage: 1
   m_projectileLifeSpan: 3
+  m_leavesFlame: 1
   m_flame: {fileID: 400000, guid: 4e6dd2e69d3298844be1dde634945b01, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:

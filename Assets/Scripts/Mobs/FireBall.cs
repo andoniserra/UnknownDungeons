@@ -38,14 +38,14 @@ public class FireBall : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D p_collision)
 	{
-		print ("Collision!");
+		//print ("Collision!");
 		if (p_collision.gameObject.layer == LayerMask.NameToLayer("Walls"))
 		{
 			if (m_leavesFlame)
 			{
 				LeaveFlame();
 			}
-			print ("Pared!");
+			//print ("Pared!");
 			Destroy(this.gameObject);
 		}
 	}
@@ -53,6 +53,11 @@ public class FireBall : MonoBehaviour {
 
 	private void LeaveFlame ()
 	{
-		Instantiate(m_flame, transform.position, transform.rotation);
+		Transform flame = Instantiate(m_flame, transform.position, transform.rotation) as Transform; 
+
+		float rotation = transform.rotation.eulerAngles.z * -1;
+		//print (rotation);
+
+		flame.transform.Rotate(Vector3.forward * rotation);
 	}
 }
