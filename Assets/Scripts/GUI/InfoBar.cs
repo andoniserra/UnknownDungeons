@@ -4,7 +4,15 @@ using System.Collections;
 public class InfoBar : MonoBehaviour {
 
 	private GameObject barBackGround;
-	
+
+	private GameObject Heart1;
+	private GameObject Heart2;
+	private GameObject Heart3;
+	private GameObject Heart4;
+	private GameObject Heart5;
+	private GameObject[] hearts;
+
+
 	private GameObject SwordLvl;
 	private GameObject Bowlvl;
 	private GameObject Magiclvl;
@@ -22,37 +30,86 @@ public class InfoBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		GameObject BarraInfo = new GameObject("InfoBar");
+
 		#region Fondo
-		barBackGround = new GameObject();
+		barBackGround = new GameObject("Fondo");
 		Simbolos.colocarImagen(barBackGround,Resources.Load<Sprite>("Sprites/GUIBack"),new Vector2(-10,-7));
+		barBackGround.transform.parent = BarraInfo.transform;
+		#endregion
+
+		#region Vida
+		GameObject Corazones = new GameObject("Corazones");
+
+		Heart1 = new GameObject("Heart1");
+		Heart1.AddComponent(typeof(SpriteRenderer));
+		Heart1.transform.parent = Corazones.transform;
+
+		Heart2 = new GameObject("Heart2");
+		Heart2.AddComponent(typeof(SpriteRenderer));
+		Heart2.transform.parent = Corazones.transform;
+
+		Heart3 = new GameObject("Heart3");
+		Heart3.AddComponent(typeof(SpriteRenderer));
+		Heart3.transform.parent = Corazones.transform;
+
+		Heart4 = new GameObject("Heart4");
+		Heart4.AddComponent(typeof(SpriteRenderer));
+		Heart4.transform.parent = Corazones.transform;
+
+		Heart5 = new GameObject("Heart5");
+		Heart5.AddComponent(typeof(SpriteRenderer));
+		Heart5.transform.parent = Corazones.transform;
+
+		hearts = new GameObject[5] {Heart1, Heart2, Heart3, Heart4, Heart5};
+
+		Corazones.transform.parent = BarraInfo.transform;
 		#endregion
 
 		#region Creacion de indicadores de armas
+		GameObject armas = new GameObject("Armas");
 
-		SwordLvl = new GameObject();
+		SwordLvl = new GameObject("Sword");
 		SwordLvl.AddComponent(typeof(SpriteRenderer));
-		Bowlvl = new GameObject();
-		Bowlvl.AddComponent(typeof(SpriteRenderer));
-		Magiclvl = new GameObject();
-		Magiclvl.AddComponent(typeof(SpriteRenderer));
-		Shieldlvl = new GameObject();
-		Shieldlvl.AddComponent(typeof(SpriteRenderer));
+		SwordLvl.transform.parent = armas.transform;
 
+		Bowlvl = new GameObject("Bow");
+		Bowlvl.AddComponent(typeof(SpriteRenderer));
+		Bowlvl.transform.parent = armas.transform;
+
+		Magiclvl = new GameObject("Magic");
+		Magiclvl.AddComponent(typeof(SpriteRenderer));
+		Magiclvl.transform.parent = armas.transform;
+
+		Shieldlvl = new GameObject("Shield");
+		Shieldlvl.AddComponent(typeof(SpriteRenderer));
+		Shieldlvl.transform.parent = armas.transform;
+
+		armas.transform.parent = BarraInfo.transform;
 		#endregion
 
 		#region Nivel
 		//Indicador de habitacion
 		//TODO: cuando este terminado el generador de mazmorras
+		Level = new GameObject("Nivel");
+		Level.transform.parent = BarraInfo.transform;
 		#endregion
 
 		#region monedas
+		GameObject Monedas = new GameObject("Monedas");
+		
 		//Indicador de monedas
-		CoinsU = new GameObject();
+		CoinsU = new GameObject("Unidades");
 		CoinsU.AddComponent(typeof(SpriteRenderer));
-		CoinsD = new GameObject();
+		CoinsU.transform.parent = Monedas.transform;
+		CoinsD = new GameObject("Decenas");
 		CoinsD.AddComponent(typeof(SpriteRenderer));
-		CoinsC = new GameObject();
+		CoinsD.transform.parent = Monedas.transform;
+		CoinsC = new GameObject("Centenas");
 		CoinsC.AddComponent(typeof(SpriteRenderer));
+		CoinsC.transform.parent = Monedas.transform;
+
+		Monedas.transform.parent = BarraInfo.transform;
 		#endregion
 
 	}
@@ -60,7 +117,25 @@ public class InfoBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//Vida
+		//Vida -9.6, -7.6
+		int corazones = FilipState.myFilip.m_fullHP;
+		int vida = FilipState.myFilip.m_hp;
+
+		for( int cor = 0; cor < corazones; cor++){
+
+			SpriteRenderer ht = hearts[cor].GetComponent<SpriteRenderer>();
+			ht.sortingLayerName = "GUI";
+			ht.sortingOrder = 3;
+			hearts[cor].transform.position = new Vector3(-9.6f + cor, -7.6f,0);
+			Debug.Log(FilipState.myFilip.m_hp);
+			if(cor < vida){
+				ht.sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[42];
+			}else{
+				ht.sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[41];
+			}
+
+		}
+
 
 		//Espada
 		SwordLvl.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + FilipState.myFilip.m_swordLvl];

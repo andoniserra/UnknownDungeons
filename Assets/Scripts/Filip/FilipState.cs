@@ -9,7 +9,7 @@ public class FilipState : MonoBehaviour
 	public bool m_move = true;
 
 	// Vida de Filip
-	public int m_fullHP = 3; 	//Numero de corazones
+	public int m_fullHP = 5; 	//Numero de corazones
 	public int m_hp = 3;		//Vida
 
 	// Dinero de Filip
@@ -50,7 +50,7 @@ public class FilipState : MonoBehaviour
 	private float m_beenHitDefaultCooldown;
 
 	public bool m_canMove = true;
-	public float m_canMoveCooldown = 0.5f;
+	public float m_canMoveCooldown = 0.1f;
 	private float m_canMoveDefaultCooldown;
 
 	public bool m_dead = false;
