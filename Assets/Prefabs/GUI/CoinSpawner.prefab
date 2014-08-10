@@ -8,11 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
-  - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: GameOver
+  m_Name: CoinSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,43 +36,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030c8eb645ec94d468ed320c7c2cd0d6, type: 3}
+  m_Script: {fileID: 11500000, guid: db90f954a150d354ba235fca0ff87d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_menuLevel: Menu
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4592b4b6d59c4a747b4da785e11081ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &21200000
-SpriteRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 227286d2b871d864383ba839658a719b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_coinsPerCycle: 50
+  m_secondsCycle: 2
+  m_coin: {fileID: 400000, guid: e325d35d57ff4d04b86d52e878ab7d26, type: 2}
+  m_coinLifeSpan: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

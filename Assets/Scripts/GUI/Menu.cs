@@ -50,6 +50,8 @@ public class Menu : MonoBehaviour {
 		halp.sortingLayerName = "GUI";
 		halp.sortingOrder = 2;
 
+		// Ponemos siempre el color neutro en el menu
+		SpriteColorSelector.SetSceneColor(1);
 
 		//Generamos el menu
 		pintarMenu();
