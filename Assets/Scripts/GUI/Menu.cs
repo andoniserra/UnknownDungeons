@@ -2,9 +2,8 @@
 using System.Collections;
 
 public class Menu : MonoBehaviour {
-
-	private float timeUpdate = 0.0f;
-	private float leerControl = 0.1f;
+	
+	private float lastTime = 0.0f;
 	private int posFlec = 0;
 	private GameObject flecha;
 	private int playerPos = 0;
@@ -15,16 +14,21 @@ public class Menu : MonoBehaviour {
 	private GameObject musicaNo;
 
 	private GameObject creditImage;
+	private GameObject halpImage;
 
-	public bool sound = true;
-	public bool music = true;
+	public static bool sound = true;
+	public static bool music = true;
+
+	private float pulsacion;
+	private bool select = false;
+	private bool back = false;
 
 	public AudioSource selectSound;
 	public AudioSource menuMusic;
-
+	 
 	public string m_startLevel;
 
-	// Use this for initialization
+	
 	void Start () {
 		//Imagen de los creditos
 		creditImage = new GameObject();
@@ -36,18 +40,49 @@ public class Menu : MonoBehaviour {
 		creditos.sortingLayerName = "GUI";
 		creditos.sortingOrder = 2;
 
+		//Imagen de la ayuda
+		halpImage = new GameObject();
+		halpImage.AddComponent<SpriteRenderer>();
+		halpImage.transform.position = new Vector2(0,0);
+		//Creamos el sprite
+		SpriteRenderer halp = halpImage.GetComponent<SpriteRenderer>();
+		halp.sprite = Resources.Load<Sprite>("Sprites/halp");
+		halp.sortingLayerName = "GUI";
+		halp.sortingOrder = 2;
+
+
+		//Generamos el menu
 		pintarMenu();
 	}
 
-	// Update is called once per frame
 	void Update () {
 
-		switch (playerPos){
-			case 0: menu (); break;
-			case 1: opciones(); break;
-			case 2: halp(); break;
-			case 3: selectCredits(); break;
-			default: playerPos = 0; break;
+		//Obtenemos las pulsaciones
+		if (Input.GetButton("Fire")){
+			select = true;
+		}else{
+			select = false;
+		}
+
+		if (Input.GetButton("Defend")){
+			back = true;
+		}else{
+			back = false;
+		}
+		
+		pulsacion = Input.GetAxis("Vertical");
+
+		//Lo ejecutamos cada 0.1 segundos
+		if (Time.time > lastTime){ 
+			lastTime = Time.time + 0.1f;
+			
+			switch (playerPos){
+			case 0: menu (); break;			//Menu inicial
+			case 1: opciones(); break;		//Menu opciones
+			case 2: pintarHalp(); break;	//Ayuda
+			case 3: selectCredits(); break;	//Creditos
+			default: playerPos = 0; break;	//Cualquier otra cosa vuelve al menu inicial
+			}
 		}
 
 	}
@@ -55,27 +90,25 @@ public class Menu : MonoBehaviour {
 	#region Menu Inicial
 
 	private void menu(){
-		float pulsacion = Input.GetAxis("Vertical");
-		if(Time.time > timeUpdate){
-			timeUpdate += leerControl;
 			
-			if(pulsacion > 0){
-				Debug.Log ("arriba");
-				posFlec -= 1;
-				if (posFlec < 0)
-					posFlec = 2;
-			}else if(pulsacion < 0){
-				Debug.Log ("abajo");
-				posFlec += 1;
-				if (posFlec > 2)
-					posFlec = 0;
-			}
-		}
-		pintarflechaMenu();
-		
-		if (Input.GetButtonDown("Fire")){
+		//Cuando cambiemos la posicion que suene y que mueva posFlec
+		if(pulsacion > 0){
 			selectSound.Play();
+			posFlec -= 1;
+			if (posFlec < 0)
+				posFlec = 2;
+		}else if(pulsacion < 0){
+			selectSound.Play();
+			posFlec += 1;
+			if (posFlec > 2)
+				posFlec = 0;
+		}
 
+		//Pintamos la flecha en su sitio
+		pintarflechaMenu();
+
+		//Cuando seleccionemos algo...
+		if (select){
 			GameObject[] go = GameObject.FindGameObjectsWithTag("TempTile");
 			
 			foreach(GameObject GoAct in go){
@@ -83,6 +116,7 @@ public class Menu : MonoBehaviour {
 				Destroy(GoAct);
 			}
 
+			//Indicamos que se ha seleccionado
 			playerPos = posFlec;
 
 			// Para cargar la escena de los slimes
@@ -91,11 +125,14 @@ public class Menu : MonoBehaviour {
 				Application.LoadLevel(m_startLevel);
 			}
 
+			//Para cargar las opciones
 			if(posFlec == 1){
 				posFlec = 0;
 				pintarOpciones();
+
+				//Para mostrar la ayuda
 			}else if(posFlec == 2){
-				pintarHalp();
+				halpImage.transform.position = new Vector3(0,18,0);
 			}
 		}
 	}
@@ -109,57 +146,55 @@ public class Menu : MonoBehaviour {
 		Simbolos.colocarImagen(new GameObject(), Simbolos.Cat, new Vector2(12,12));
 	}
 
+
 	private void pintarflechaMenu(){
 
+		//Si no existe la flecha la creamos
 		if(flecha == null){
 			flecha = new GameObject();
 			flecha.AddComponent(typeof(SpriteRenderer));
 		}
-
 		Simbolos.colocarImagen(flecha, Simbolos.Right, new Vector2(6,14 - posFlec));
 	}
 
 	#endregion
 
-
 	#region Opciones
 	private void opciones(){
-		float pulsacion = Input.GetAxis("Vertical");
-		if(Time.time > timeUpdate){
-			timeUpdate += leerControl;
-			
-			if(pulsacion > 0){
-				posFlec -= 1;
-				if (posFlec < 0)
-					posFlec = 2;
-			}else if(pulsacion < 0){
-				posFlec += 1;
-				if (posFlec > 2)
-					posFlec = 0;
-			}
-		
 
-			if (Input.GetButton("Fire")){
-				switch(posFlec){
-				case 0: cambiarMusica();break;
-				case 1: cambiarSonido();break;
-				case 2: creditos(); break;
-				}
-				selectSound.Play ();
-			}
-
-			if (Input.GetButtonDown("Defend")){
-				Debug.Log("Defend");
-				GameObject[] go = GameObject.FindGameObjectsWithTag("TempTile");
-				
-				foreach(GameObject GoAct in go){
-					Destroy(GoAct);
-				}
-
-				pintarMenu();
-				playerPos = 0;
-			}
+		//Cuando cambiemos la posicion que suene y que mueva posFlec
+		if(pulsacion > 0){
+			selectSound.Play ();
+			posFlec -= 1;
+			if (posFlec < 0)
+				posFlec = 2;
+		}else if(pulsacion < 0){
+			selectSound.Play ();
+			posFlec += 1;
+			if (posFlec > 2)
+				posFlec = 0;
 		}
+	
+		if (select){
+			switch(posFlec){
+			case 0: cambiarMusica();break;	//Activamos o desactivamos la musica
+			case 1: cambiarSonido();break;	//Activamos o desactivamos el sonido
+			case 2: creditos(); break;
+			}
+
+		}
+
+		if (back){
+			GameObject[] go = GameObject.FindGameObjectsWithTag("TempTile");
+			
+			foreach(GameObject GoAct in go){
+				Destroy(GoAct);
+			}
+
+			pintarMenu();
+			playerPos = 0;
+		}
+		
 		pintarflechaOpc();
 	}
 
@@ -225,6 +260,7 @@ public class Menu : MonoBehaviour {
 
 	#endregion
 
+	#region Creditos
 	private void creditos(){
 		GameObject[] go = GameObject.FindGameObjectsWithTag("TempTile");
 		
@@ -235,37 +271,28 @@ public class Menu : MonoBehaviour {
 	}
 
 	private void selectCredits(){
-		bool mostrados = false;
-		creditImage.transform.position = creditImage.transform.position + new Vector3(0, 1 * Time.deltaTime * 4,0);
-		
+		//Hacemos que la ventana de creditos suba poco a poco, cuando salga de la pantalla volvemos a las opciones
+		creditImage.transform.position = creditImage.transform.position + new Vector3(0, Time.deltaTime * 16,0);
 		if(creditImage.transform.position.y > 45){
 			posFlec = 0;
 			playerPos = 1;
+			creditImage.transform.position = new Vector3(0,0,0);
 			pintarOpciones();
 		}
 	}
+	#endregion
 	
 
-	private void halp(){
+	private void pintarHalp(){
 
-		if (Input.GetButtonDown("Attack")){
+		//Mostramos la ayuda y cuando pulsemos una tecla volvemos al menu
+		if (back || select){
 
-		}
-
-		if (Input.GetButtonDown("Defend")){
-			
-			GameObject[] go = GameObject.FindGameObjectsWithTag("TempTile");
-			
-			foreach(GameObject GoAct in go){
-				Destroy(GoAct);
-			}
+			halpImage.transform.position = new Vector3(0,0,0);
 			
 			pintarMenu();
 			playerPos = 0;
 		}
 	}
 
-	private void pintarHalp(){
-
-	}
 }
