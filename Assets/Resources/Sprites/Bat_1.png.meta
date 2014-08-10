@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 4946500627eb8c74abdfad243160644c
+guid: 8b5de49b0b19a1344b02fdd29873e964
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Slime_0
+    21300000: Bat_2
+    21300002: Bat_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +27,9 @@ TextureImporter:
   maxTextureSize: 32
   textureSettings:
     filterMode: 0
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

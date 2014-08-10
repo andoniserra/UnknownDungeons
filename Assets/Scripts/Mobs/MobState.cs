@@ -87,7 +87,7 @@ public class MobState : MonoBehaviour
 	public void Rise()
 	{
 		m_animator.SetBool("grounded", false);
-		m_animator.SetTrigger("rise");
+		//m_animator.SetTrigger("rise");
 		m_isFlying = true;
 	}
 

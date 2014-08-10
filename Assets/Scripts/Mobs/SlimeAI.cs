@@ -25,6 +25,8 @@ public class SlimeAI : MonoBehaviour
 
 	private MobState m_mobState;
 
+	private Animator m_animator;
+
 
 	void Start () 
 	{
@@ -32,6 +34,7 @@ public class SlimeAI : MonoBehaviour
 		m_defaultJumpCooldown = m_jumpCooldown;
 		m_movement = GetComponent<Movement>();
 		m_mobState = GetComponent<MobState>();
+		m_animator = GetComponent<Animator>();
 	}
 	
 
@@ -57,6 +60,7 @@ public class SlimeAI : MonoBehaviour
 			if (JumpClock())
 			{
 				m_action = GLOBALS.Action.Wait;
+				m_animator.SetBool("jump", false);
 			}
 			else
 			{
@@ -106,6 +110,7 @@ public class SlimeAI : MonoBehaviour
 			break;
 		case 1:
 			m_action = GLOBALS.Action.Jump;
+			m_animator.SetBool("jump", true);
 			break;
 		default:
 			m_action = GLOBALS.Action.Wait;
