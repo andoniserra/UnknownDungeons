@@ -3,9 +3,10 @@ guid: 3dfc7441558f1a54bbe452d8a19b2909
 TextureImporter:
   fileIDToRecycleName:
     21300000: suelos02
-    21300002: suelos02_0
-    21300004: suelos02_1
-    21300006: suelos02_2
+    21300002: S2_Floor
+    21300004: S2_Obstacle
+    21300006: S2_HoleL
+    21300008: S2_HoleR
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,8 +26,8 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 1024
+  textureFormat: -3
+  maxTextureSize: 64
   textureSettings:
     filterMode: 0
     aniso: 1
@@ -41,13 +42,23 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: suelos02_0
+    - name: S2_Floor
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 18
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: S2_Obstacle
       rect:
         serializedVersion: 2
         x: 18
@@ -57,22 +68,22 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: suelos02_1
+    - name: S2_HoleL
       rect:
         serializedVersion: 2
         x: 1
-        y: 18
+        y: 1
         width: 16
         height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: suelos02_2
+    - name: S2_HoleR
       rect:
         serializedVersion: 2
-        x: 1
+        x: 17
         y: 1
-        width: 32
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: .5, y: .5}

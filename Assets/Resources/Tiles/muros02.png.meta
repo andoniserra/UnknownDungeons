@@ -3,16 +3,16 @@ guid: c31e1f1009cf7c7409024165e1e8c69f
 TextureImporter:
   fileIDToRecycleName:
     21300000: muros02
-    21300002: muros02_0
-    21300004: muros02_1
-    21300006: muros02_2
-    21300008: muros02_3
-    21300010: muros02_4
-    21300012: muros02_5
-    21300014: muros02_6
-    21300016: muros02_7
-    21300018: muros02_8
-    21300020: muros02_9
+    21300002: M2_UL
+    21300004: M2_UM
+    21300006: M2_UR
+    21300008: M2_ML
+    21300010: M2_Door_Closed
+    21300012: M2_Door_Open
+    21300014: M2_MR
+    21300016: M2_BL
+    21300018: M2_BM
+    21300020: M2_BR
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,7 +54,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: muros02_0
+    - name: M2_UL
       rect:
         serializedVersion: 2
         x: 1
@@ -62,9 +62,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: muros02_1
+    - name: M2_UM
       rect:
         serializedVersion: 2
         x: 19
@@ -72,9 +72,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: muros02_2
+    - name: M2_UR
       rect:
         serializedVersion: 2
         x: 55
@@ -82,9 +82,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: muros02_3
+    - name: M2_ML
       rect:
         serializedVersion: 2
         x: 1
@@ -92,9 +92,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: muros02_4
+    - name: M2_Door_Closed
       rect:
         serializedVersion: 2
         x: 19
@@ -102,9 +102,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: muros02_5
+    - name: M2_Door_Open
       rect:
         serializedVersion: 2
         x: 37
@@ -112,9 +112,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: muros02_6
+    - name: M2_MR
       rect:
         serializedVersion: 2
         x: 55
@@ -122,9 +122,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: muros02_7
+    - name: M2_BL
       rect:
         serializedVersion: 2
         x: 1
@@ -132,9 +132,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: muros02_8
+    - name: M2_BM
       rect:
         serializedVersion: 2
         x: 19
@@ -142,9 +142,9 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: muros02_9
+    - name: M2_BR
       rect:
         serializedVersion: 2
         x: 55
@@ -152,7 +152,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

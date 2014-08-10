@@ -24,7 +24,7 @@ public class FilipState : MonoBehaviour
 	
 	// Prefabs de las armas
 	public Transform m_arrow;
-	public float m_arrowStart = 8f;
+	public float m_arrowStart = 10f;
 	public int m_arrowLvl = 1;
 	public Transform m_swordSwing;
 	public float m_swordRange = 18f;

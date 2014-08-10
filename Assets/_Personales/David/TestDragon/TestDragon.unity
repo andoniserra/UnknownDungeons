@@ -10681,6 +10681,7 @@ MonoBehaviour:
   m_enemyList: []
   m_enemyCount: 0
   m_doorList: []
+  m_rooms: 0
 --- !u!4 &1961796612
 Transform:
   m_ObjectHideFlags: 0

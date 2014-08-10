@@ -47,6 +47,7 @@ public class GameState : MonoBehaviour
 		AddAllDoors();
 		m_doorsOpen = false;
 
+		SpriteColorSelector.SetSceneColor(0);
 		// TODO: Comprobar nivel en el que estamos para cambiar la musica si hace falta
 		Music.PlayLevel01Music();
 
@@ -124,14 +125,30 @@ public class GameState : MonoBehaviour
 		myGameState.m_lastDoorDirection = p_doorDirection;
 		if (p_scene == "Random")
 		{
-			int randomInt = Random.Range(0,2);
-			if (randomInt == 0)
+			int randomInt = Random.Range(0,6);
+			switch (randomInt)
 			{
+			case 0:
 				Application.LoadLevel("TestSlime");
-			}
-			else
-			{
+				break;
+			case 1:
 				Application.LoadLevel("TestBat");
+				break;
+			case 2:
+				Application.LoadLevel("TestSet02");
+				break;
+			case 3:
+				Application.LoadLevel("TestSet02_2");
+				break;
+			case 4:
+				Application.LoadLevel("TestSet03");
+				break;
+			case 5:
+				Application.LoadLevel("TestSet03_2");
+				break;
+			default:
+				Application.LoadLevel("TestSlime");
+				break;
 			}
 		}
 		else
@@ -153,14 +170,33 @@ public class GameState : MonoBehaviour
 			SpawnSpot.SpawnFilip(myGameState.m_lastDoorDirection);
 		}
 
-		if (Application.loadedLevelName == "TestDragon")
+		switch (Application.loadedLevelName)
 		{
+		case "TestDragon":
 			SpriteColorSelector.SetSceneColor(3);
 			SpawnSpot.SpawnFilip(GLOBALS.Direction.North);
-		}
-		else
-		{
+			break;
+		case "TestSlime":
+			SpriteColorSelector.SetSceneColor(0);
+			break;
+		case "TestBat":
+			SpriteColorSelector.SetSceneColor(0);
+			break;
+		case "TestSet02":
 			SpriteColorSelector.SetSceneColor(1);
+			break;
+		case "TestSet02_2":
+			SpriteColorSelector.SetSceneColor(1);
+			break;
+		case "TestSet03":
+			SpriteColorSelector.SetSceneColor(2);
+			break;
+		case "TestSet03_2":
+			SpriteColorSelector.SetSceneColor(2);
+			break;
+		default:
+			SpriteColorSelector.SetSceneColor(1);
+			break;
 		}
 
 		if (Application.loadedLevelName != "TestDragon" && 
