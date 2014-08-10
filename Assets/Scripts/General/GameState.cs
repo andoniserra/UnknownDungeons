@@ -13,6 +13,8 @@ public class GameState : MonoBehaviour
 
 	public GameObject[] m_doorList;
 
+	public int m_rooms = 0;
+
 	private bool m_doorsOpen = false;
 
 	private GLOBALS.Direction m_lastDoorDirection = GLOBALS.Direction.South;
@@ -53,16 +55,42 @@ public class GameState : MonoBehaviour
 
 	void Update () 
 	{
-		if (m_enemyCount <= 0 && !m_doorsOpen || Input.GetKeyDown(KeyCode.K))
+		if (m_enemyCount <= 0 && !m_doorsOpen)
 		{
-			print ("All dead!");
+			print ("All Dead!");
 			foreach (GameObject go in m_doorList)
 			{
 				go.GetComponent<Door>().m_open = true;
 			}
 			m_doorsOpen = true;
 		}
+
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+			foreach (GameObject go in m_doorList)
+			{
+				go.GetComponent<Door>().m_open = true;
+			}
+			//TakeMeToTheDragon();
+			m_doorsOpen = true;
+		}
+
+		//if (GameState.myGameState.m_rooms >=5 )
+		//{
+		//	TakeMeToTheDragon();
+		//}
 	}
+
+	/*
+	private void TakeMeToTheDragon ()
+	{
+		print ("Take me to the Dragon!");
+		foreach (GameObject go in m_doorList)
+		{
+			go.GetComponent<Door>().m_targetScene = "TestDragon";
+		}
+	}
+	*/
 
 
 	private void AddAllEnemies ()
@@ -128,10 +156,17 @@ public class GameState : MonoBehaviour
 		if (Application.loadedLevelName == "TestDragon")
 		{
 			SpriteColorSelector.SetSceneColor(3);
+			SpawnSpot.SpawnFilip(GLOBALS.Direction.North);
 		}
 		else
 		{
 			SpriteColorSelector.SetSceneColor(1);
+		}
+
+		if (Application.loadedLevelName != "TestDragon" && 
+		    Application.loadedLevelName != "TestGameOver")
+		{
+			m_rooms += 1;
 		}
 	}
 }

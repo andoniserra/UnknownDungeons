@@ -23,6 +23,8 @@ public class InfoBar : MonoBehaviour {
 	private GameObject CoinsC;
 
 	private GameObject Level;
+	private GameObject LevelU;
+	private GameObject LevelD;
 
 	private GameObject[] Life;
 
@@ -102,7 +104,15 @@ public class InfoBar : MonoBehaviour {
 		//Indicador de habitacion
 		//TODO: cuando este terminado el generador de mazmorras
 		Level = new GameObject("Nivel");
-		//Level.AddComponent(typeof(ColorChanger));
+		LevelU = new GameObject("Unidades");
+		LevelU.AddComponent(typeof(SpriteRenderer));
+		LevelU.AddComponent(typeof(ColorChanger));
+		LevelU.transform.parent = Level.transform;
+		LevelD = new GameObject("Decenas");
+		LevelD.AddComponent(typeof(SpriteRenderer));
+		LevelD.AddComponent(typeof(ColorChanger));
+		LevelD.transform.parent = Level.transform;
+
 		Level.transform.parent = BarraInfo.transform;
 		#endregion
 
@@ -181,6 +191,15 @@ public class InfoBar : MonoBehaviour {
 		//Unidades
 		CoinsU.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + udds];
 		Simbolos.colocarImagen(CoinsU, CoinsU.GetComponent<SpriteRenderer>().sprite, new Vector2(5.4f, -7.5f), "GUI", 3);
+
+
+		int roomUs = (GameState.myGameState.m_rooms % 100) % 10;
+		int roomDs = (GameState.myGameState.m_rooms / 10) % 10;
+		//Mazmorra en la que estamos
+		LevelD.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + roomDs];
+		Simbolos.colocarImagen(LevelD, LevelD.GetComponent<SpriteRenderer>().sprite, new Vector2(8.25f, -7.5f), "GUI", 3);
+		LevelU.GetComponent<SpriteRenderer>().sprite = Resources.LoadAll<Sprite>("Sprites/tipografia")[66 + roomUs];
+		Simbolos.colocarImagen(LevelU, LevelU.GetComponent<SpriteRenderer>().sprite, new Vector2(8.75f, -7.5f), "GUI", 3);
 
 
 	}
