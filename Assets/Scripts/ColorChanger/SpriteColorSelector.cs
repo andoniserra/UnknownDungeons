@@ -54,10 +54,4 @@ public class SpriteColorSelector : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
-
-
-	public static void SetSceneColor ( int p_index )
-	{
-		scs.m_sceneColor = scs.colors[p_index];
-	}
 }

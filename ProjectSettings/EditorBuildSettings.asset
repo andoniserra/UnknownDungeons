@@ -15,5 +15,3 @@ EditorBuildSettings:
     path: Assets/_Personales/David/TestBat/TestBat.unity
   - enabled: 1
     path: Assets/_Personales/David/TestGameOver/TestGameOver.unity
-  - enabled: 1
-    path: Assets/_Personales/David/TestDragon/TestDragon.unity

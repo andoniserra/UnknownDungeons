@@ -136,7 +136,22 @@ public class FilipState : MonoBehaviour
 		//print ("Collision!");
 		if (p_collision.gameObject.tag == "Enemy")
 		{
-			ApplyDamage(1);
+			if (!m_beenHit && !m_defending)
+			{
+				//print ("Damage!");
+				m_hp -= 1;
+				m_beenHit = true;
+				m_canMove = false;
+				m_animator.SetTrigger("herido");
+
+				// reproducir sonido herido
+				SoundHelper.PlayPlayerHit();
+				if (m_hp <= 0)
+				{
+					m_dead = true;
+					GameState.PlayerDead();
+				}
+			}
 		}
 	}
 	
@@ -478,27 +493,6 @@ public class FilipState : MonoBehaviour
 		else
 		{
 			return false;
-		}
-	}
-
-
-	public void ApplyDamage ( int p_damage )
-	{
-		if (!m_beenHit && !m_defending)
-		{
-			//print ("Damage!");
-			m_hp -= p_damage;
-			m_beenHit = true;
-			m_canMove = false;
-			m_animator.SetTrigger("herido");
-			
-			// reproducir sonido herido
-			SoundHelper.PlayPlayerHit();
-			if (m_hp <= 0)
-			{
-				m_dead = true;
-				GameState.PlayerDead();
-			}
 		}
 	}
 }
