@@ -28,4 +28,15 @@ public class Arrow : MonoBehaviour
 			p_collider.gameObject.SendMessage( "ApplyDamage", m_damage );
 		}
 	}
+
+
+	void OnCollisionEnter2D (Collision2D p_collision)
+	{
+		print ("Collision!");
+		if (p_collision.gameObject.layer == LayerMask.NameToLayer("Walls"))
+		{
+			print ("Pared!");
+			Destroy(this.gameObject);
+		}
+	}
 }

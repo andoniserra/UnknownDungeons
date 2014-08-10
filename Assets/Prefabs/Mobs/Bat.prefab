@@ -90,8 +90,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 10
+  m_reward: 1
+  m_canFly: 0
+  m_hitsToFall: 2
   m_beenHit: 0
   m_beenHitCooldown: 1
+  m_isFlying: 0
   m_dead: 0
   m_coin: {fileID: 400000, guid: f4400c26c35a27247be02f2b6c240798, type: 2}
 --- !u!114 &11400002
@@ -172,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e257d3bda2d07b4ab1560ead510ea94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cooldown: 3
+  m_cooldown: 1
   m_flyCooldown: 1
   m_action: 1
   m_flyDirection: 0

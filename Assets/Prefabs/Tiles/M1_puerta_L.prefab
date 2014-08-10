@@ -108,7 +108,7 @@ MonoBehaviour:
   m_open: 0
   m_closedSprite: {fileID: 21300010, guid: f7ce11ad8d215114b8f15e931ba32e11, type: 3}
   m_openSprite: {fileID: 21300012, guid: f7ce11ad8d215114b8f15e931ba32e11, type: 3}
-  m_targetScene: TestSlime
+  m_targetScene: Random
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

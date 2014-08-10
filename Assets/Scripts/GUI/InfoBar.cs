@@ -36,6 +36,7 @@ public class InfoBar : MonoBehaviour {
 		barBackGround = new GameObject("Fondo");
 		Simbolos.colocarImagen(barBackGround,Resources.Load<Sprite>("Sprites/GUIBack"),new Vector2(-10,-7));
 		barBackGround.transform.parent = BarraInfo.transform;
+		barBackGround.AddComponent(typeof(ColorChanger));
 		#endregion
 
 		#region Vida
@@ -43,22 +44,27 @@ public class InfoBar : MonoBehaviour {
 
 		Heart1 = new GameObject("Heart1");
 		Heart1.AddComponent(typeof(SpriteRenderer));
+		Heart1.AddComponent(typeof(ColorChanger));
 		Heart1.transform.parent = Corazones.transform;
 
 		Heart2 = new GameObject("Heart2");
 		Heart2.AddComponent(typeof(SpriteRenderer));
+		Heart2.AddComponent(typeof(ColorChanger));
 		Heart2.transform.parent = Corazones.transform;
 
 		Heart3 = new GameObject("Heart3");
 		Heart3.AddComponent(typeof(SpriteRenderer));
+		Heart3.AddComponent(typeof(ColorChanger));
 		Heart3.transform.parent = Corazones.transform;
 
 		Heart4 = new GameObject("Heart4");
 		Heart4.AddComponent(typeof(SpriteRenderer));
+		Heart4.AddComponent(typeof(ColorChanger));
 		Heart4.transform.parent = Corazones.transform;
 
 		Heart5 = new GameObject("Heart5");
 		Heart5.AddComponent(typeof(SpriteRenderer));
+		Heart5.AddComponent(typeof(ColorChanger));
 		Heart5.transform.parent = Corazones.transform;
 
 		hearts = new GameObject[5] {Heart1, Heart2, Heart3, Heart4, Heart5};
@@ -71,18 +77,22 @@ public class InfoBar : MonoBehaviour {
 
 		SwordLvl = new GameObject("Sword");
 		SwordLvl.AddComponent(typeof(SpriteRenderer));
+		SwordLvl.AddComponent(typeof(ColorChanger));
 		SwordLvl.transform.parent = armas.transform;
 
 		Bowlvl = new GameObject("Bow");
 		Bowlvl.AddComponent(typeof(SpriteRenderer));
+		Bowlvl.AddComponent(typeof(ColorChanger));
 		Bowlvl.transform.parent = armas.transform;
 
 		Magiclvl = new GameObject("Magic");
 		Magiclvl.AddComponent(typeof(SpriteRenderer));
+		Magiclvl.AddComponent(typeof(ColorChanger));
 		Magiclvl.transform.parent = armas.transform;
 
 		Shieldlvl = new GameObject("Shield");
 		Shieldlvl.AddComponent(typeof(SpriteRenderer));
+		Shieldlvl.AddComponent(typeof(ColorChanger));
 		Shieldlvl.transform.parent = armas.transform;
 
 		armas.transform.parent = BarraInfo.transform;
@@ -92,6 +102,7 @@ public class InfoBar : MonoBehaviour {
 		//Indicador de habitacion
 		//TODO: cuando este terminado el generador de mazmorras
 		Level = new GameObject("Nivel");
+		//Level.AddComponent(typeof(ColorChanger));
 		Level.transform.parent = BarraInfo.transform;
 		#endregion
 
@@ -101,12 +112,15 @@ public class InfoBar : MonoBehaviour {
 		//Indicador de monedas
 		CoinsU = new GameObject("Unidades");
 		CoinsU.AddComponent(typeof(SpriteRenderer));
+		CoinsU.AddComponent(typeof(ColorChanger));
 		CoinsU.transform.parent = Monedas.transform;
 		CoinsD = new GameObject("Decenas");
 		CoinsD.AddComponent(typeof(SpriteRenderer));
+		CoinsD.AddComponent(typeof(ColorChanger));
 		CoinsD.transform.parent = Monedas.transform;
 		CoinsC = new GameObject("Centenas");
 		CoinsC.AddComponent(typeof(SpriteRenderer));
+		CoinsC.AddComponent(typeof(ColorChanger));
 		CoinsC.transform.parent = Monedas.transform;
 
 		Monedas.transform.parent = BarraInfo.transform;

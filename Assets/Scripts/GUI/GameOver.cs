@@ -20,7 +20,7 @@ public class GameOver : MonoBehaviour
 
 	private void pintarGameOver()
 	{
-		Simbolos.print("GAME OVER", new Vector2(5.5f,8.5f));
+		Simbolos.print("GAME OVER", new Vector2(5.5f,9f));
 	}
 
 
